@@ -1,38 +1,21 @@
 var player = new Player();
+loadFromLocalStorage();
+gameLoop()
 
 $(document).ready(function(){
-	
-	var money = 0;
-	var logPlus = 1;
-
-	var stones = 0;
-	var stonePlus = 1;
-
-	var autoChopperPrice = 50;
-	
-	var pickaxes = 0;
-	var pickaxesPrice = 25;
-
-	var logPrice = 1;
 	var menu;
 
-	setInterval(function(){
-		player.logs += player.autoLogPlus;
-		screenUpdate();
-	},1000)
-
-
 	$("#chop").click(function(){
-		player.logs += logPlus;
+		player.logs += player.logPlus;
 		screenUpdate();
 	});
 
 	$("#mine").click(function(){
-		if(pickaxes==0){
+		if(player.pickaxe==0){
 			alert("you have nothing to mine stone with!");
 		}else{
 
-			stones += stonePlus;
+			player.stone += player.stonePlus;
 			screenUpdate();
 		}
 	});
@@ -61,35 +44,39 @@ $(document).ready(function(){
 		}
 
 		if(amount < 0){
-			money += player.logs*logPrice;
+			player.money += player.logs*player.logPrice;
 			player.logs = 0;
 		}else{
 
-			money += amount*logPrice;
+			player.money += amount*player.logPrice;
 			player.logs -= amount
 		}
 	}
 
 	$("#autoChopper-buy").click(function(){
-		if(money < autoChopperPrice){
+		if(player.money < player.autoChopperPrice){
 			return;
 		}
-		money -= autoChopperPrice;
+		player.money -= player.autoChopperPrice;
 		player.autoLogPlus ++;
-		autoChopperPrice *=player.autoLogPlus;
+		player.autoChopperPrice *=player.autoLogPlus;
 		
-		changeInventory();
+		screenUpdate();
 	});
 
 	$("#pickaxe-buy").click(function(){
-		if(money < pickaxesPrice){
+		if(player.money < player.pickaxesPrice){
 			return;
 		}
-		money -= pickaxesPrice;
-		pickaxes ++;
-		pickaxesPrice *=pickaxes;
+		player.money -= player.pickaxesPrice;
+		player.pickaxe ++;
+		player.pickaxesPrice *=player.pickaxe;
 		
-		changeInventory();
+		screenUpdate();
+	});
+
+	$("#save").click(function(){
+		menu = switchMenu("save-menu");
 	});
 
 	$("#visit").click(function(){

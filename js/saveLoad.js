@@ -12,7 +12,6 @@ function loadFromLocalStorage() {
   let backup = player.save();
   try {
     player.load(JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_NAME)));
-    switchTab('dimensions');
   }
   catch (e) { player.load(backup); }
 }

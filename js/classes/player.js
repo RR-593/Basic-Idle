@@ -29,6 +29,7 @@ class Player {
 		data.push(this.logs);
 		data.push(this.logPlus);
 		data.push(this.logPrice);
+		data.push(this.stone);
 		data.push(this.stonePlus);
 		data.push(this.stonePrice);
 		data.push(this.money);

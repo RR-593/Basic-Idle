@@ -1,6 +1,6 @@
 function screenUpdate(){
 	//Inventory
-	$("#money").html(money);
+	$("#money").html(player.money);
 
 	if(player.autoLogPlus>0){
 		$("#autoChopper-title").css("display","block");
@@ -9,14 +9,14 @@ function screenUpdate(){
 		$("#autoChopper-title").css("display","none");
 	}
 	
-	if(pickaxes>0){
+	if(player.pickaxe>0){
 		$("#pickaxe-title").css("display","block");
-		$("#ownedPickaxes").html(pickaxes);
+		$("#ownedPickaxes").html(player.pickaxe);
 	}else{
 		$("#pickaxe-title").css("display","none");
 	}
 
-	if(pickaxes>0){
+	if(player.pickaxe>0){
 		$("#stone-title").css("display","block");
 		$("#stones").html(stones);
 	}else{
@@ -47,8 +47,8 @@ function screenUpdate(){
 		$("#sell10").attr('disabled','');
 	}
 
-	if(money>=autoChopperPrice){
-		$("#autoChopperCost").html(autoChopperPrice);
+	if(player.money>=player.autoChopperPrice){
+		$("#autoChopperCost").html(player.autoChopperPrice);
 		$("#autoChopper-buy").css("display","block");
 		$("#autoChopper-buy").removeAttr("disabled");
 	}else{
@@ -59,8 +59,8 @@ function screenUpdate(){
 		}
 	}
 	
-	if(money>=pickaxesPrice){
-		$("#pickaxeCost").html(pickaxesPrice);
+	if(player.money>=player.pickaxesPrice){
+		$("#pickaxeCost").html(player.pickaxesPrice);
 		$("#pickaxe-buy").css("display","block");
 		$("#pickaxe-buy").removeAttr("disabled");
 	}else{
