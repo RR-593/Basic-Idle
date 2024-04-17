@@ -12,9 +12,9 @@ body{
 	margin-bottom: 10px;
 }
 
-.items button{
+.items{
 	display: grid;
-	grid-template-columns: repeat(3,50px);
+	grid-template-columns: repeat(3,290px);
 	margin-bottom: 10px;
 }
 

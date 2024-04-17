@@ -9,6 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 	<script type="text/javascript" src="js/classes/player.js"></script>
+	<script type="text/javascript" src="js/switchMenu.js"></script>
 	<script type="text/javascript" src="js/screenUpdate.js"></script>
 	<script type="text/javascript" src="js/saveLoad.js"></script>
 	<script type="text/javascript" src="js/gameLoop.js"></script>
@@ -29,7 +30,7 @@
 					<button id="saveToLocal">Save</button>
 					<button id="hardReset" onclick="hardReset();">Reset</button>
 				</div>
-				<button id="return">Return</button>
+				<button id="return" onclick="switchMenu('main');">Return</button>
 			</div>
 
 			<div class="shop">
@@ -47,7 +48,7 @@
 					<button id="pickaxe-buy">Buy [1] pickaxe ($<label id="pickaxeCost">50</label>)</button>
 				</div>
 
-				<button id="return">Return</button>
+				<button id="return" onclick="switchMenu('main');">Return</button>
 
 			</div>
 		</div>
