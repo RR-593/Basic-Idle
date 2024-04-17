@@ -23,7 +23,6 @@ class Player {
     }
 
     save() {
-        saveInverntory();
 
         let data = [];
         data.push(this.last_ts);

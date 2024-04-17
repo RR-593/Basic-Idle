@@ -1,6 +1,6 @@
 var player = new Player();
-var mats = player.mats;
-var items = player.items;
+const mats = player.mats;
+const items = player.items;
 loadFromLocalStorage();
 gameLoop()
 
