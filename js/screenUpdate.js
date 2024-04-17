@@ -1,69 +1,70 @@
 function screenUpdate() {
+    //mats n items
+    var autoChopper = player.items.autoChopper;
+    var pickaxe = player.items.pickaxe;
+    var stone = player.mats.stone;
+    var log = player.mats.log;
+
     //Inventory
     $("#money").html(player.money);
 
-    if (player.autoLogPlus > 0) {
+    if (autoChopper.amount > 0) {
         $("#autoChopper-title").css("display", "block");
-        $("#ownedAutoChopper").html(player.autoLogPlus);
+        $("#ownedAutoChopper").html(autoChopper.plus);
     } else {
         $("#autoChopper-title").css("display", "none");
     }
 
-    if (player.pickaxe > 0) {
+    if (pickaxe.amount > 0) {
         $("#pickaxe-title").css("display", "block");
-        $("#ownedPickaxes").html(player.pickaxe);
+        $("#ownedPickaxes").html(pickaxe.amount);
     } else {
         $("#pickaxe-title").css("display", "none");
     }
 
-    if (player.stone > 0) {
+    if (stone.amount > 0) {
         $("#stone-title").css("display", "block");
-        $("#stones").html(player.stone);
+        $("#stones").html(stone.amount);
     } else {
         $("#stone-title").css("display", "none");
     }
 
-    if (player.logs == 1) {
-        $("#logs").html(player.logs);
-
-    } else {
-        $("#logs").html(player.logs);
-    }
+    $("#logs").html(log.amount);
 
     //Shop
-    if (player.logs > 0) {
+    if (log.amount > 0) {
         $("#sellAll").removeAttr("disabled");
     } else {
         $("#sellAll").attr('disabled', '');
     }
-    if (player.logs >= 1) {
+    if (log.amount >= 1) {
         $("#sell1").removeAttr("disabled");
     } else {
         $("#sell1").attr('disabled', '');
     }
-    if (player.logs >= 10) {
+    if (log.amount >= 10) {
         $("#sell10").removeAttr("disabled");
     } else {
         $("#sell10").attr('disabled', '');
     }
 
-    $("#autoChopperCost").html(player.autoChopperPrice);
-    if (player.money >= player.autoChopperPrice) {
+    $("#autoChopperCost").html(autoChopper.price);
+    if (player.money >= autoChopper.price) {
         $("#autoChopper-buy").css("display", "block");
         $("#autoChopper-buy").removeAttr("disabled");
     } else {
-        if (player.autoLogPlus > 0)
+        if (autoChopper.amount > 0)
             $("#autoChopper-buy").attr('disabled', '');
         else
             $("#autoChopper-buy").css("display", "none");
     }
 
-    $("#pickaxeCost").html(player.pickaxesPrice);
-    if (player.money >= player.pickaxesPrice) {
+    $("#pickaxeCost").html(pickaxe.price);
+    if (player.money >= pickaxe.price) {
         $("#pickaxe-buy").css("display", "block");
         $("#pickaxe-buy").removeAttr("disabled");
     } else {
-        if (player.pickaxe > 0)
+        if (pickaxe.amount > 0)
             $("#pickaxe-buy").attr('disabled', '');
         else
             $("#pickaxe-buy").css("display", "none");

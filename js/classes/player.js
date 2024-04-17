@@ -1,70 +1,75 @@
 class Player {
-  constructor() {
-    this.reset();
-  }
+    constructor() {
+        this.reset();
+    }
 
-  reset() {
-    this.last_ts = Date.now();
+    reset() {
 
-    this.logs 							= 0;
-		this.logPlus 						= 1;
-		this.logPrice 					= 1;
-		this.stone 							= 0;
-		this.stonePlus 					= 1;
-		this.stonePrice 				= 1;
-		this.money 							= 0;
-		this.pickaxe 						= 0;
-		this.pickaxesPrice 			= 25;
-		this.autoLogPlus 				= 0;
-		this.autoChopperPrice 	= 70;
+        this.last_ts = Date.now();
 
+        this.mats = {
+            log: this.newMat("log"),
+            stone: this.newMat("stone")
+        };
 
-    this.time_since_start = 0;
-    this.won = false;
-  }
+        this.items = {
+            pickaxe: this.newItem("pickaxe", 25),
+            autoChopper: this.newItem("autoChopper", 70, 1)
+        };
+        this.money = 0;
 
-  save() {
-    let data = [];
-    data.push(this.last_ts);
-		data.push(this.logs);
-		data.push(this.logPlus);
-		data.push(this.logPrice);
-		data.push(this.stone);
-		data.push(this.stonePlus);
-		data.push(this.stonePrice);
-		data.push(this.money);
-		data.push(this.pickaxe);
-		data.push(this.pickaxesPrice);
-		data.push(this.autoLogPlus);
-		data.push(this.autoChopperPrice);
+        this.time_since_start = 0;
+        this.won = false;
+    }
 
-		data.push(this.time_since_start);
-		data.push(this.won);
+    save() {
+        saveInverntory();
 
-    return data;
-  }
+        let data = [];
+        data.push(this.last_ts);
 
-  load(data) {
-    this.reset();
+        data.push(this.mats);
+        data.push(this.items);
 
-    this.last_ts = data[0];
+        data.push(this.money);
 
-    this.logs 							= data[1];
-		this.logPlus 						= data[2];
-		this.logPrice 					= data[3];
-		this.stone 							= data[4];
-		this.stonePlus 					= data[5];
-		this.stonePrice 				= data[6];
-		this.money 							= data[7];
-		this.pickaxe 						= data[8];
-		this.pickaxesPrice 			= data[9];
-		this.autoLogPlus 				= data[10];
-		this.autoChopperPrice 	= data[11];
+        data.push(this.time_since_start);
+        data.push(this.won);
 
+        return data;
+    }
 
-    this.time_since_start = data[12];
-    this.won = data[13];
+    load(data) {
+        this.reset();
 
-    screenUpdate();
-  }
+        this.last_ts = data[0];
+
+        this.mats = data[1];
+        this.items = data[2];
+
+        this.money = data[3];
+
+        this.time_since_start = data[4];
+        this.won = data[5];
+
+        screenUpdate();
+    }
+
+    newItem(name = "", price = 1, plus = 0, amount = 0) {
+        return {
+            name: name,
+            amount: amount,
+            price: price,
+            plus: plus
+        };
+    }
+
+    newMat(name = "", price = 1, plus = 1, amount = 0) {
+        return {
+            name: name,
+            amount: amount,
+            price: price,
+            plus: plus
+        };
+    }
 }

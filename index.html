@@ -1,64 +1,67 @@
 <!DOCTYPE html>
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<title> Chopp My Wood</title>
-	<link rel="stylesheet" href="./stylesheets/main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title> Chopp My Wood</title>
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-	<script type="text/javascript" src="js/classes/player.js"></script>
-	<script type="text/javascript" src="js/switchMenu.js"></script>
-	<script type="text/javascript" src="js/screenUpdate.js"></script>
-	<script type="text/javascript" src="js/saveLoad.js"></script>
-	<script type="text/javascript" src="js/gameLoop.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/classes/player.js"></script>
+    <script type="text/javascript" src="js/switchMenu.js"></script>
+    <script type="text/javascript" src="js/screenUpdate.js"></script>
+    <script type="text/javascript" src="js/saveLoad.js"></script>
+    <script type="text/javascript" src="js/gameLoop.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </head>
+
 <body>
-	<div class="content">
-		<div class="menus">
-			<div class="main">
-				<button id="chop">Chop log</button>
-				<button id="visit">Shop</button>
-				<button id="mine">Mine stone</button>
-				<button id="save">Save</button>
-			</div>
+    <div class="content">
+        <div class="menus">
+            <div class="main">
+                <button id="chop">Chop log</button>
+                <button id="visit">Shop</button>
+                <button id="mine">Mine stone</button>
+                <button id="save">Save</button>
+            </div>
 
-			<div class="save-menu">
-				<div class="saveButtons">
-					<button id="saveToLocal">Save</button>
-					<button id="hardReset" onclick="hardReset();">Reset</button>
-				</div>
-				<button id="return" onclick="switchMenu('main');">Return</button>
-			</div>
+            <div class="save-menu">
+                <div class="saveButtons">
+                    <button id="saveToLocal">Save</button>
+                    <button id="hardReset" onclick="hardReset();">Reset</button>
+                </div>
+                <button id="return" onclick="switchMenu('main');">Return</button>
+            </div>
 
-			<div class="shop">
-				<div class="sellButtons">
-					<button class="sellBut" id="sell1">Sell [1] Log</button>
-					<button class="sellBut" id="sell10">Sell [10] Logs</button>
-					<button class="sellBut" id="sellAll">Sell All Logs</button>
-				</div>
+            <div class="shop">
+                <div class="sellButtons">
+                    <button class="sellBut" id="sell1">Sell [1] Log</button>
+                    <button class="sellBut" id="sell10">Sell [10] Logs</button>
+                    <button class="sellBut" id="sellAll">Sell All Logs</button>
+                </div>
 
-				<div class="upgrades">
-					<button id="autoChopper-buy">Buy [1] mechanical Axe ($<span id="autoChopperCost">100</span>)</button>
-				</div>
+                <div class="upgrades">
+                    <button id="whetStone-buy">Buy sharpening stone<br>cost: <lable>50</lable> <lable>stone</lable></button>
+                </div>
 
-				<div class="items">
-					<button id="pickaxe-buy">Buy [1] pickaxe ($<label id="pickaxeCost">50</label>)</button>
-				</div>
+                <div class="items">
+                    <button id="pickaxe-buy">Buy [1] pickaxe ($<label id="pickaxeCost">50</label>)</button>
+                    <button id="autoChopper-buy">Buy [1] mechanical Axe ($<span id="autoChopperCost">100</span>)</button>
+                </div>
 
-				<button id="return" onclick="switchMenu('main');">Return</button>
+                <button id="return" onclick="switchMenu('main');">Return</button>
 
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<div class="inventory">
-			<p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes">0</label></p>
-			<p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper">0</label></p>
-			<p id="money-title">Money: $<label id="money">0</label></p>
-			<p id="logs-title">Logs: <label id="logs">0</label></p>
-			<p id="stone-title">Stones: <label id="stones">0</label></p>
-		</div>
-	</div>
+        <div class="inventory">
+            <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes">0</label></p>
+            <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper">0</label></p>
+            <p id="money-title">Money: $<label id="money">0</label></p>
+            <p id="logs-title">Logs: <label id="logs">0</label></p>
+            <p id="stone-title">Stones: <label id="stones">0</label></p>
+        </div>
+    </div>
 </body>
