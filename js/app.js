@@ -1,5 +1,6 @@
+var player = new Player();
+
 $(document).ready(function(){
-	var player = new Player();
 	
 	var money = 0;
 	var logPlus = 1;
@@ -7,7 +8,6 @@ $(document).ready(function(){
 	var stones = 0;
 	var stonePlus = 1;
 
-	var autoLogPlus = 0;
 	var autoChopperPrice = 50;
 	
 	var pickaxes = 0;
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	var menu;
 
 	setInterval(function(){
-		player.logs += autoLogPlus;
+		player.logs += player.autoLogPlus;
 		screenUpdate();
 	},1000)
 
@@ -75,8 +75,8 @@ $(document).ready(function(){
 			return;
 		}
 		money -= autoChopperPrice;
-		autoLogPlus ++;
-		autoChopperPrice *=autoLogPlus;
+		player.autoLogPlus ++;
+		autoChopperPrice *=player.autoLogPlus;
 		
 		changeInventory();
 	});
