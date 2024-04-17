@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	var player = new Player();
 	
-	var logs = 0;
 	var money = 0;
 	var logPlus = 1;
 
@@ -18,13 +17,13 @@ $(document).ready(function(){
 	var menu;
 
 	setInterval(function(){
-		logs += autoLogPlus;
+		player.logs += autoLogPlus;
 		screenUpdate();
 	},1000)
 
 
 	$("#chop").click(function(){
-		logs += logPlus;
+		player.logs += logPlus;
 		screenUpdate();
 	});
 
@@ -57,17 +56,17 @@ $(document).ready(function(){
 
 	function sellLogs(amount){
 
-		if(logs<amount){
+		if(player.logs<amount){
 			return;
 		}
 
 		if(amount < 0){
-			money += logs*logPrice;
-			logs = 0;
+			money += player.logs*logPrice;
+			player.logs = 0;
 		}else{
 
 			money += amount*logPrice;
-			logs -= amount
+			player.logs -= amount
 		}
 	}
 
