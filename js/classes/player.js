@@ -10,7 +10,7 @@ class Player {
         this.mats = {
             log: new Mat("log", true),
             stone: new Mat("stone"),
-            iron_ore: new Mat("iron_ore", true)
+            iron_ore: new Mat("iron_ore")
         };
 
         this.items = {
