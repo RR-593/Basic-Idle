@@ -8,8 +8,8 @@ class Player {
         this.last_ts = Date.now();
 
         this.mats = {
-            log: this.newMat("log"),
-            stone: this.newMat("stone")
+            log: new Mat("log", true),
+            stone: new Mat("stone")
         };
 
         this.items = {
@@ -49,7 +49,9 @@ class Player {
 
         this.last_ts = data[0];
 
-        this.mats = data[1];
+        for (let mat in data[1]) {
+            for (let attr in data[1][mat]) this.mats[mat][attr] = data[1][mat][attr];
+        }
         this.items = data[2];
         this.upgrades = data[3];
 
@@ -62,15 +64,6 @@ class Player {
     }
 
     newItem(name = "", price = 1, plus = 0, amount = 0) {
-        return {
-            name: name,
-            amount: amount,
-            price: price,
-            plus: plus
-        };
-    }
-
-    newMat(name = "", price = 1, plus = 1, amount = 0) {
         return {
             name: name,
             amount: amount,

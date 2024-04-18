@@ -1,7 +1,6 @@
 var LOCAL_STORAGE_NAME = "raveWriath.BasicIdle";
 
 function saveToLocalStorage() {
-    saveInverntory();
     try {
         window.localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(player.save()));
     } catch (e) {}
@@ -16,7 +15,6 @@ function loadFromLocalStorage() {
 }
 
 function getSave() {
-    saveInverntory();
     return btoa(JSON.stringify(player.save()));
 }
 
@@ -30,10 +28,4 @@ function loadSave(save) {
 function hardReset() {
     window.localStorage.removeItem(LOCAL_STORAGE_NAME);
     player.reset();
-}
-
-function saveInverntory() {
-    player.mats = mats;
-    player.items = items;
-    player.upgrades = upgrades;
 }

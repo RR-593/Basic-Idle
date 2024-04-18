@@ -15,8 +15,8 @@ function gameLoop() {
     player.last_ts = current_time;
 
     //processTimedelta(delta);
-    mats.log.amount += items.autoChopper.amount * items.autoChopper.plus;
+    //mats.log.amount += items.autoChopper.amount * items.autoChopper.plus;
     screenUpdate();
 
-    setTimeout(gameLoop, 500);
+    setTimeout(gameLoop, 1000);
 }

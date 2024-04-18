@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./stylesheets/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="js/classes/mat.js"></script>
     <script type="text/javascript" src="js/classes/player.js"></script>
     <script type="text/javascript" src="js/switchMenu.js"></script>
     <script type="text/javascript" src="js/screenUpdate.js"></script>
@@ -21,9 +22,11 @@
     <div class="content">
         <div class="menus">
             <div class="main">
-                <button id="chop">Chop log</button>
+                <div class="menu-mats">
+                    <button id="harvest-log">Chop log</button>
+                    <button id="harvest-stone">Mine stone</button>
+                </div>
                 <button id="visit">Shop</button>
-                <button id="mine">Mine stone</button>
                 <button id="save">Save</button>
             </div>
 
@@ -57,11 +60,12 @@
         </div>
 
         <div class="inventory">
+            <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
             <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
             <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
             <p id="money-title">Money: $<label id="money"></label></p>
-            <p id="logs-title">Logs: <label id="logs"></label></p>
-            <p id="stone-title">Stones: <label id="stones"></label></p>
+            <p id="logs-title">Logs: <label id="log"></label></p>
+            <p id="stone-title">Stones: <label id="stone"></label></p>
         </div>
     </div>
 </body>

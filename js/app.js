@@ -1,27 +1,19 @@
 var player = new Player();
 loadFromLocalStorage();
+var items = player.items;
+var upgrades = player.upgrades;
 
-const mats = player.mats;
-const items = player.items;
-const upgrades = player.upgrades;
-
-gameLoop()
+gameLoop();
 
 $(document).ready(function() {
     var menu;
 
-    $("#chop").click(function() {
-        mats.log.amount += mats.log.plus + (upgrades.wheyStone.amount * 25);
-        screenUpdate();
-    });
-
-    $("#mine").click(function() {
-        if (items.pickaxe.amount == 0) {
-            alert("you have nothing to mine stone with!");
-        } else {
-
-            mats.stone.amount += mats.stone.plus;
-            screenUpdate();
+    $(".menu-mats button").click(function() {
+        var matName = this.id.slice(8);
+        for (let mat in player.mats) {
+            if (matName == player.mats[mat].name) {
+                player.mats[mat].harvest();
+            }
         }
     });
 
@@ -46,17 +38,17 @@ $(document).ready(function() {
 
     function sell(amount) {
 
-        if (mats.log.amount < amount) {
+        if (player.mats.log.amount < amount) {
             return;
         }
 
         if (amount < 0) {
-            player.money += mats.log.amount * mats.log.price;
-            mats.log.amount = 0;
+            player.money += player.mats.log.amount * player.mats.log.sellprice;
+            player.mats.log.amount = 0;
         } else {
 
-            player.money += amount * mats.log.price;
-            mats.log.amount -= amount
+            player.money += amount * player.mats.log.sellprice;
+            player.mats.log.amount -= amount;
         }
     }
 

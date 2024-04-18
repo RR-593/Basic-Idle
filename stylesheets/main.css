@@ -1,5 +1,78 @@
+html {
+    background-color: beige;
+}
+
 body {
-    background-color: white;
+    --color-background: #1f1d36;
+    --color-text: #FFFFFA;
+    --color-dark-text: #A0A0A0;
+    --color-purple-text: #FA198B;
+    --color-version-control: #261C15;
+    --color-newsticker: #010203;
+    --color-element: #01151B;
+    --color-tickspeed: #1e90e1;
+    --color-heroes: #52b788;
+    --color-common: #00A6FB;
+    --color-uncommon: #FFBC42;
+    --color-rare: #FB6617;
+    --color-legendary: #CE84AD;
+    --color-infinity: #466e99;
+    /**/
+    --rgb-button: 72, 86, 150;
+}
+
+body {
+    min-height: 640px;
+    height: 640px;
+    min-width: 800px;
+    font-size: 15px;
+    display: grid;
+    position: relative;
+    background: var(--color-background);
+}
+
+* {
+    color: var(--color-text);
+    margin: 0;
+    /* font-family: var(--font-main);
+    font-variation-settings: var(--settings-sans); */
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+button {
+    --this-rgb: var(--rgb-button);
+    background: rgb(var(--this-rgb));
+    border: 0;
+    border-radius: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    box-shadow: 0.25em 0.25em 0 rgba(var(--this-rgb), 0.5);
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+button:disabled {
+    filter: brightness(0.7);
+    cursor: auto;
+}
+
+.menus {
+    --this-rgb: var(--rgb-purple-text);
+    font-size: 1.25em;
+    margin: 0.75em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    align-self: center;
+    width: 70%;
 }
 
 .shop,
@@ -11,11 +84,16 @@ body {
 }
 
 .sellButtons,
-#autoChopper-buy,
 .saveButtons {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     margin-bottom: 10px;
+}
+
+.sellButtons button,
+.saveButtons button,
+.items button {
+    margin-right: 10px;
 }
 
 .items,
@@ -25,18 +103,15 @@ body {
     margin-bottom: 10px;
 }
 
-.sellButtons button,
-.saveButtons button {
-    margin-right: 10px;
-}
-
 .inventory {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-button {
-    background-color: antiquewhite;
-    font-size: 18px;
+    --image-b: 12px;
+    --image-w: calc(350px - calc(2*var(--image-b)));
+    --image-h: calc(497px - calc(2*var(--image-b)));
+    background-image: url(../assets/inventory.svg);
+    height: var(--image-h);
+    width: var(--image-w);
+    padding: var(--image-b);
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 90px);
 }

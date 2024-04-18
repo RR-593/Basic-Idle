@@ -2,11 +2,11 @@ function screenUpdate() {
     //mats n items
     var autoChopper = player.items.autoChopper;
     var pickaxe = player.items.pickaxe;
-    var stone = player.mats.stone;
     var log = player.mats.log;
 
     //Inventory
     $("#money").html(player.money);
+    for (let mat in player.mats) player.mats[mat].screenUpdate();
 
     if (autoChopper.amount > 0) {
         $("#autoChopper-title").css("display", "block");
@@ -21,15 +21,6 @@ function screenUpdate() {
     } else {
         $("#pickaxe-title").css("display", "none");
     }
-
-    if (stone.amount > 0) {
-        $("#stone-title").css("display", "block");
-        $("#stones").html(stone.amount);
-    } else {
-        $("#stone-title").css("display", "none");
-    }
-
-    $("#logs").html(log.amount);
 
     //Shop
     if (log.amount > 0) {
