@@ -17,18 +17,6 @@ class Mat {
         this.unlocked = false;
     }
 
-    load(data) {
-        alert(data[1]);
-        this.de_name = data[0];
-        this.de_sellprice = data[1];
-        this.de_plus = data[2];
-        this.name = data[3];
-        this.sellprice = data[4];
-        this.plus = data[5];
-        this.amount = data[6];
-        this.unlocked = data[7];
-    }
-
     harvest() {
 
         if (!this.unlocked) {
