@@ -18,7 +18,6 @@ $(document).ready(function() {
     });
 
 
-
     $(".sellBut").click(function() {
         sellAmount = this.id;
         switch (sellAmount) {

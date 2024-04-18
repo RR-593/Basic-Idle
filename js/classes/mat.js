@@ -28,7 +28,7 @@ class Mat {
     }
 
     screenUpdate() {
-        var id = "#" + this.name + "-title";
+        var id = "." + this.name;
         $("#" + this.name).html(this.amount);
         if (this.amount > 0) {
             $(id).css("display", "block");

@@ -77,14 +77,16 @@ button:disabled {
 
 .shop,
 #autoChopper-title,
-#stone-title,
 #pickaxe-title,
-.save-menu {
+.save-menu,
+.stone,
+.iron_ore {
     display: none;
 }
 
 .sellButtons,
-.saveButtons {
+.saveButtons,
+.menu-mats {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     margin-bottom: 10px;
@@ -92,7 +94,8 @@ button:disabled {
 
 .sellButtons button,
 .saveButtons button,
-.items button {
+.items button,
+.menu-mats button {
     margin-right: 10px;
 }
 
@@ -103,8 +106,12 @@ button:disabled {
     margin-bottom: 10px;
 }
 
+.inventory div {
+    text-align: center;
+}
+
 .inventory {
-    --image-b: 12px;
+    --image-b: 14px;
     --image-w: calc(350px - calc(2*var(--image-b)));
     --image-h: calc(497px - calc(2*var(--image-b)));
     background-image: url(../assets/inventory.svg);
@@ -112,6 +119,9 @@ button:disabled {
     width: var(--image-w);
     padding: var(--image-b);
     position: absolute;
-    top: 20%;
-    left: calc(50% - 90px);
+    top: 70px;
+    left: calc(60% - 50px);
+    /**/
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
 }

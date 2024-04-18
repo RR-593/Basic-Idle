@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
+
     <title> Chopp My Wood</title>
     <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="js/classes/mat.js"></script>
@@ -25,6 +31,7 @@
                 <div class="menu-mats">
                     <button id="harvest-log">Chop log</button>
                     <button id="harvest-stone">Mine stone</button>
+                    <button id="harvest-iron_ore">Mine iron</button>
                 </div>
                 <button id="visit">Shop</button>
                 <button id="save">Save</button>
@@ -60,12 +67,25 @@
         </div>
 
         <div class="inventory">
-            <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
+            <div class="money">
+                <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
+                <p id="money-title">Money: $<label id="money"></label></p>
+            </div>
+            <div class="log">
+                <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
+                <p id="logs-title">Logs: <label id="log"></label></p>
+            </div>
+            <div class="stone">
+                <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
+                <p id="stone-title">Stones: <label id="stone"></label></p>
+            </div>
+            <div class="iron_ore">
+                <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
+                <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
+            </div>
             <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
             <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
-            <p id="money-title">Money: $<label id="money"></label></p>
-            <p id="logs-title">Logs: <label id="log"></label></p>
-            <p id="stone-title">Stones: <label id="stone"></label></p>
+
         </div>
     </div>
 </body>
