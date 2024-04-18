@@ -1,34 +1,42 @@
-body{
-	background-color: white;
+body {
+    background-color: white;
 }
 
-.shop, #autoChopper-title, #stone-title, #pickaxe-title, .save-menu{
-	display: none;
+.shop,
+#autoChopper-title,
+#stone-title,
+#pickaxe-title,
+.save-menu {
+    display: none;
 }
 
-.sellButtons, #autoChopper-buy, .saveButtons{
-	display: grid;
-	grid-template-columns: repeat(3,100px);
-	margin-bottom: 10px;
+.sellButtons,
+#autoChopper-buy,
+.saveButtons {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    margin-bottom: 10px;
 }
 
-.items{
-	display: grid;
-	grid-template-columns: repeat(3,290px);
-	margin-bottom: 10px;
+.items,
+.upgrades {
+    display: grid;
+    grid-template-columns: repeat(3, 290px);
+    margin-bottom: 10px;
 }
 
-.sellButtons button, .saveButtons button{
-	margin-right: 10px;
+.sellButtons button,
+.saveButtons button {
+    margin-right: 10px;
 }
 
-.inventory{
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+.inventory {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-button{
-	background-color: antiquewhite;
-	font-size: 18px;
+button {
+    background-color: antiquewhite;
+    font-size: 18px;
 }

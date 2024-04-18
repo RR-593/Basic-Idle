@@ -35,4 +35,5 @@ function hardReset() {
 function saveInverntory() {
     player.mats = mats;
     player.items = items;
+    player.upgrades = upgrades;
 }

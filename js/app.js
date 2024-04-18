@@ -1,14 +1,17 @@
 var player = new Player();
+loadFromLocalStorage();
+
 const mats = player.mats;
 const items = player.items;
-loadFromLocalStorage();
+const upgrades = player.upgrades;
+
 gameLoop()
 
 $(document).ready(function() {
     var menu;
 
     $("#chop").click(function() {
-        mats.log.amount += mats.log.plus;
+        mats.log.amount += mats.log.plus + (upgrades.wheyStone.amount * 25);
         screenUpdate();
     });
 
@@ -21,6 +24,8 @@ $(document).ready(function() {
             screenUpdate();
         }
     });
+
+
 
     $(".sellBut").click(function() {
         sellAmount = this.id;
@@ -55,10 +60,16 @@ $(document).ready(function() {
         }
     }
 
+    $("#whetStone-buy").click(function() {
+        if (player.money < upgrades.wheyStone.price) return;
+        player.money -= upgrades.wheyStone.price;
+        upgrades.wheyStone.amount++;
+        upgrades.wheyStone.price *= upgrades.wheyStone.price;
+    });
+
+
     $("#autoChopper-buy").click(function() {
-        if (player.money < items.autoChopper.price) {
-            return;
-        }
+        if (player.money < items.autoChopper.price) return;
         player.money -= items.autoChopper.price;
         items.autoChopper.amount++;
         items.autoChopper.price *= items.autoChopper.amount;
