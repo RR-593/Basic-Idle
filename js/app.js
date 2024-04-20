@@ -76,4 +76,11 @@ $(document).ready(function() {
         screenUpdate();
     });
 
+    $(".backpack-tabs button").click(function() {
+        $(".backpack-tabs button").removeClass('selected');
+        this.className = 'selected';
+        menu = switchInv(this.id);
+        screenUpdate();
+    });
+
 });

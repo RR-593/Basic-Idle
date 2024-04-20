@@ -66,31 +66,34 @@
             </div>
         </div>
 
-        <div class="packback">
-            <div class="packback-tabs">
-                <button id="inv"></button>
-                <button id="tools"></button>
+        <div class="backpack">
+            <div class="backpack-tabs">
+                <button class="selected" id="mat"><span>Inv</span></button>
+                <button id="tool"><span>Tools</span></button>
             </div>
             <div class="inventory">
-                <div class="money">
-                    <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
-                    <p id="money-title">Money: $<label id="money"></label></p>
+                <div id="toolpack">
+                    <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
+                    <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
                 </div>
-                <div class="log">
-                    <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
-                    <p id="logs-title">Logs: <label id="log"></label></p>
+                <div id="matpack">
+                    <div class="money">
+                        <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
+                        <p id="money-title">Money: $<label id="money"></label></p>
+                    </div>
+                    <div class="log">
+                        <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
+                        <p id="logs-title">Logs: <label id="log"></label></p>
+                    </div>
+                    <div class="stone">
+                        <object id="crud-icon" data="assets/rock.svg" width="70" height="70"></object>
+                        <p id="stone-title">Stones: <label id="stone"></label></p>
+                    </div>
+                    <div class="iron_ore">
+                        <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
+                        <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
+                    </div>
                 </div>
-                <div class="stone">
-                    <object id="crud-icon" data="assets/rock.svg" width="70" height="70"></object>
-                    <p id="stone-title">Stones: <label id="stone"></label></p>
-                </div>
-                <div class="iron_ore">
-                    <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
-                    <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
-                </div>
-                <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
-                <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
-
             </div>
         </div>
     </div>
