@@ -1,7 +1,5 @@
 var player = new Player();
 loadFromLocalStorage();
-var items = player.items;
-var upgrades = player.upgrades;
 
 gameLoop();
 
@@ -13,6 +11,17 @@ $(document).ready(function() {
         for (let mat in player.mats) {
             if (matName == player.mats[mat].name) {
                 player.mats[mat].harvest();
+                return;
+            }
+        }
+    });
+
+    $(".tools button").click(function() {
+        var toolName = this.id.slice(4);
+        for (let tool in player.tools) {
+            if (toolName == player.tools[tool].name) {
+                player.tools[tool].buy(player);
+                return;
             }
         }
     });
@@ -58,33 +67,12 @@ $(document).ready(function() {
         upgrades.wheyStone.price *= upgrades.wheyStone.price;
     });
 
-
-    $("#autoChopper-buy").click(function() {
-        if (player.money < items.autoChopper.price) return;
-        player.money -= items.autoChopper.price;
-        items.autoChopper.amount++;
-        items.autoChopper.price *= items.autoChopper.amount;
-
-        screenUpdate();
-    });
-
-    $("#pickaxe-buy").click(function() {
-        if (player.money < items.pickaxe.price) {
-            return;
-        }
-        player.money -= items.pickaxe.price;
-        items.pickaxe.amount++;
-        items.pickaxe.price *= items.pickaxe.amount;
-
-        screenUpdate();
-    });
-
     $("#save").click(function() {
         menu = switchMenu("save-menu");
     });
 
     $("#visit").click(function() {
-        menu = switchMenu("shop");
+        menu = switchMenu("menu-shop");
         screenUpdate();
     });
 

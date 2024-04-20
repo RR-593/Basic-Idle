@@ -1,7 +1,7 @@
 function screenUpdate() {
-    //mats n items
-    var autoChopper = player.items.autoChopper;
-    var pickaxe = player.items.pickaxe;
+    //mats n tools
+    var autoChopper = player.tools.autoChopper;
+    var pickaxe = player.tools.pickaxe;
     var log = player.mats.log;
 
     //Inventory

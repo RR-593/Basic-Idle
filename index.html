@@ -45,7 +45,7 @@
                 <button id="return" onclick="switchMenu('main');">Return</button>
             </div>
 
-            <div class="shop">
+            <div class="menu-shop">
                 <div class="sellButtons">
                     <button class="sellBut" id="sell1">Sell [1] Log</button>
                     <button class="sellBut" id="sell10">Sell [10] Logs</button>
@@ -56,9 +56,9 @@
                     <button id="whetStone-buy">Buy sharpening stone<br>cost: <lable>50</lable> <lable>stone</lable></button>
                 </div>
 
-                <div class="items">
-                    <button id="pickaxe-buy">Buy [1] pickaxe ($<label id="pickaxeCost"></label>)</button>
-                    <button id="autoChopper-buy">Buy [1] mechanical Axe ($<span id="autoChopperCost"></span>)</button>
+                <div class="tools">
+                    <button id="buy-pickaxe">Buy [1] pickaxe ($<label id="pickaxeCost"></label>)</button>
+                    <button id="buy-autoChopper">Buy [1] mechanical Axe ($<span id="autoChopperCost"></span>)</button>
                 </div>
 
                 <button id="return" onclick="switchMenu('main');">Return</button>
@@ -66,26 +66,32 @@
             </div>
         </div>
 
-        <div class="inventory">
-            <div class="money">
-                <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
-                <p id="money-title">Money: $<label id="money"></label></p>
+        <div class="packback">
+            <div class="packback-tabs">
+                <button id="inv"></button>
+                <button id="tools"></button>
             </div>
-            <div class="log">
-                <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
-                <p id="logs-title">Logs: <label id="log"></label></p>
-            </div>
-            <div class="stone">
-                <object id="crud-icon" data="assets/rock.svg" width="70" height="70"></object>
-                <p id="stone-title">Stones: <label id="stone"></label></p>
-            </div>
-            <div class="iron_ore">
-                <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
-                <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
-            </div>
-            <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
-            <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
+            <div class="inventory">
+                <div class="money">
+                    <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
+                    <p id="money-title">Money: $<label id="money"></label></p>
+                </div>
+                <div class="log">
+                    <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
+                    <p id="logs-title">Logs: <label id="log"></label></p>
+                </div>
+                <div class="stone">
+                    <object id="crud-icon" data="assets/rock.svg" width="70" height="70"></object>
+                    <p id="stone-title">Stones: <label id="stone"></label></p>
+                </div>
+                <div class="iron_ore">
+                    <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
+                    <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
+                </div>
+                <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
+                <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
 
+            </div>
         </div>
     </div>
 </body>

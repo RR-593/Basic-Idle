@@ -13,13 +13,13 @@ class Player {
             iron_ore: new Mat("iron_ore")
         };
 
-        this.items = {
-            pickaxe: this.newItem("pickaxe", 25),
-            autoChopper: this.newItem("autoChopper", 70, 1)
+        this.tools = {
+            pickaxe: this.newTool("pickaxe", 25, "stone"),
+            autoChopper: this.newTool("autoChopper", 70, "log", 1)
         };
 
         this.upgrades = {
-            wheyStone: this.newItem("wheStone", 50)
+            //wheyStone: this.newtool("wheStone", 50)
         }
 
         this.money = 0;
@@ -34,7 +34,7 @@ class Player {
         data.push(this.last_ts);
 
         data.push(this.mats);
-        data.push(this.items);
+        data.push(this.tools);
         data.push(this.upgrades);
 
         data.push(this.money);
@@ -53,7 +53,10 @@ class Player {
         for (let mat in data[1]) {
             for (let attr in data[1][mat]) this.mats[mat][attr] = data[1][mat][attr];
         }
-        this.items = data[2];
+
+        for (let tool in data[2]) {
+            for (let attr in data[2][tool]) this.tools[tool][attr] = data[2][tool][attr];
+        }
         this.upgrades = data[3];
 
         this.money = data[4];
@@ -64,12 +67,28 @@ class Player {
         screenUpdate();
     }
 
-    newItem(name = "", price = 1, plus = 0, amount = 0) {
+    newTool(name = "", price = 1, matName = "", plus = 0, amount = 0) {
         return {
             name: name,
             amount: amount,
             price: price,
-            plus: plus
+            plus: plus,
+            matName: matName,
+
+            buy: function(player) {
+                for (let mat in player.mats) {
+                    if (this.matName == player.mats[mat].name) {
+                        if (player.money < this.price) return;
+                        player.money -= this.price;
+                        this.amount++;
+                        this.price *= this.amount;
+
+                        player.mats[mat].unlock();
+                        screenUpdate();
+                        return;
+                    }
+                }
+            }
         };
     }
 }
