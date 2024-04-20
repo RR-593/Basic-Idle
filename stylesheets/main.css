@@ -1,8 +1,4 @@
 html {
-    background-color: beige;
-}
-
-body {
     --color-background: #1f1d36;
     --color-text: #FFFFFA;
     --color-dark-text: #A0A0A0;
@@ -112,14 +108,14 @@ button:disabled {
 .backpack {
     display: grid;
     position: absolute;
-    top: 70px;
-    left: calc(60% - 50px);
+    top: 10px;
+    left: calc(89% - 320px);
 }
 
 .backpack-tabs {
     display: grid;
     grid-template-columns: repeat(4, 65px);
-    column-gap: 8px;
+    column-gap: 4px;
 }
 
 .backpack-tabs button {
@@ -154,21 +150,21 @@ button:disabled {
     z-index: 2;
 }
 
-#matpack {
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(4, 80px);
-    grid-template-rows: repeat(5, 95px);
-}
-
 .inventory {
     z-index: 1;
-    --image-b: 14px;
-    --image-w: calc(350px - calc(2*var(--image-b)));
-    --image-h: calc(510px - calc(2*var(--image-b)));
+    --image-b: 25px;
+    --image-w: calc(370px - calc(2*var(--image-b)));
+    --image-h: calc(530px - calc(2*var(--image-b)));
     background-image: url(../assets/inventory.svg);
     height: var(--image-h);
     width: var(--image-w);
     padding: var(--image-b);
     /**/
+}
+
+#matpack {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(5, 95px);
 }

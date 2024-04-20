@@ -32,11 +32,8 @@ class Mat {
     screenUpdate() {
         var id = "." + this.name;
         $("#" + this.name).html(this.amount);
-        if (this.amount > 0) {
-            $(id).css("display", "block");
-        } else {
-            $(id).css("display", "none");
-        }
+        if (this.amount) $(id).css("display", "block");
+        else $(id).css("display", "none");
     }
 
 }

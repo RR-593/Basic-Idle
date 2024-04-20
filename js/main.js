@@ -1,9 +1,13 @@
 var player = new Player();
 loadFromLocalStorage();
-
 gameLoop();
 
+$(window).on('load', function() {
+    screenUpdate();
+});
+
 $(document).ready(function() {
+    screenUpdate();
     var menu;
 
     $(".menu-mats button").click(function() {

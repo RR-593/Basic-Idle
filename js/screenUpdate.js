@@ -5,22 +5,22 @@ function screenUpdate() {
     var log = player.mats.log;
 
     //Inventory
-    $("#money").html(player.money);
+    if (player.money) {
+        $(".money").css("display", "block");
+        $("#money").html(player.money);
+    } else $(".money").css("display", "none");
+
     for (let mat in player.mats) player.mats[mat].screenUpdate();
 
     if (autoChopper.amount > 0) {
         $("#autoChopper-title").css("display", "block");
         $("#ownedAutoChopper").html(autoChopper.plus);
-    } else {
-        $("#autoChopper-title").css("display", "none");
-    }
+    } else $("#autoChopper-title").css("display", "none");
 
     if (pickaxe.amount > 0) {
         $("#pickaxe-title").css("display", "block");
         $("#ownedPickaxes").html(pickaxe.amount);
-    } else {
-        $("#pickaxe-title").css("display", "none");
-    }
+    } else $("#pickaxe-title").css("display", "none");
 
     //Shop
     if (log.amount > 0) {
