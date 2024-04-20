@@ -14,8 +14,8 @@ class Player {
         };
 
         this.tools = {
-            pickaxe: this.newTool("pickaxe", 25, "stone"),
-            autoChopper: this.newTool("autoChopper", 70, "log", 1)
+            pickaxe: this.newTool("pickaxe", 25, ["stone", "iron_ore", "coal"]),
+            autoChopper: this.newTool("autoChopper", 70, ["log"], 1)
         };
 
         this.upgrades = {
@@ -67,27 +67,37 @@ class Player {
         screenUpdate();
     }
 
-    newTool(name = "", price = 1, matName = "", plus = 0, amount = 0) {
+    newTool(name = "", price = 1, matNames = [], plus = 0, amount = 0, lvl = 0) {
         return {
             name: name,
-            amount: amount,
             price: price,
+            matNames: matNames,
             plus: plus,
-            matName: matName,
+            amount: amount,
+            lvl: lvl,
 
-            buy: function(player) {
-                for (let mat in player.mats) {
-                    if (this.matName == player.mats[mat].name) {
-                        if (player.money < this.price) return;
-                        player.money -= this.price;
-                        this.amount++;
-                        this.price *= this.amount;
+            upgrade(lvl = null) {
+                if (lvl) this.lvl = lvl;
+                else this.lvl += 1;
 
-                        player.mats[mat].unlock();
-                        screenUpdate();
-                        return;
-                    }
-                }
+                if (lvl < this.lvl)
+                    for (let i = 0; i < this.matNames.length; i++)
+                        if (player.mats[matNames[i]]) player.mats[matNames[i]].unlocked = false;
+
+                for (let i = 0; i < this.matNames.length && i < this.lvl; i++)
+                    if (player.mats[matNames[i]])
+                        player.mats[matNames[i]].unlocked = true;
+
+            },
+
+            buy(player) {
+                if (player.money < this.price) return;
+                player.money -= this.price;
+                this.amount++;
+                this.price *= this.amount;
+
+                this.upgrade();
+                screenUpdate();
             }
         };
     }

@@ -18,10 +18,10 @@ function screenUpdate() {
         $("#ownedAutoChopper").html(autoChopper.plus);
     } else $("#autoChopper-title").css("display", "none");
 
-    if (pickaxe.amount > 0) {
-        $("#pickaxe-title").css("display", "block");
-        $("#ownedPickaxes").html(pickaxe.amount);
-    } else $("#pickaxe-title").css("display", "none");
+    if (pickaxe.lvl > 0) {
+        $(".pick").css("display", "block");
+        $("#ownedPickaxes").html(pickaxe.lvl);
+    } else $(".pick").css("display", "none");
 
 
     //Shop

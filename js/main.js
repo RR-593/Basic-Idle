@@ -1,18 +1,14 @@
 var player = new Player();
-gameLoop();
+var menu;
 
+$(document).ready(() => {
 
-$(document).ready(function() {
-    screenUpdate();
-    var menu;
-
+    gameLoop();
     $(".menu-mats button").click(function() {
         var matName = this.id.slice(8);
-        for (let mat in player.mats) {
-            if (matName == player.mats[mat].name) {
-                player.mats[mat].harvest();
-                return;
-            }
+        if (matName == player.mats[matName].name) {
+            player.mats[matName].harvest();
+            return;
         }
     });
 
@@ -82,5 +78,4 @@ $(document).ready(function() {
         menu = switchInv(this.id);
         screenUpdate();
     });
-
 });

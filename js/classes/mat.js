@@ -15,10 +15,6 @@ class Mat {
         this.unlocked = false;
     }
 
-    unlock() {
-        this.unlocked = true;
-    }
-
     harvest(multiplyer = 1) {
 
         if (!this.unlocked) {
@@ -32,7 +28,8 @@ class Mat {
     screenUpdate() {
         var eclass = "." + this.name;
         $("#" + this.name).html(this.amount);
-        if (this.unlocked) $("#harvest-" + this.name).css("display", "grid");
+        if (this.unlocked) $("#harvest-" + this.name).css("display", "grid")
+        else $("#harvest-" + this.name).css("display", "none");
         if (this.amount) $(eclass).css("display", "block")
         else $(eclass).css("display", "none");
     }

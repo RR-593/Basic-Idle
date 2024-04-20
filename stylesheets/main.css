@@ -22,7 +22,7 @@ html {
 body {
     min-height: 640px;
     height: 640px;
-    min-width: 800px;
+    min-width: 1000px;
     font-size: 15px;
     display: grid;
     position: relative;
@@ -73,17 +73,6 @@ button:disabled {
     width: 70%;
 }
 
-.menu-shop,
-.menu-mats button,
-#toolpack,
-#autoChopper-title,
-#pickaxe-title,
-.save-menu,
-.stone,
-.iron_ore {
-    display: none;
-}
-
 .sellButtons,
 .saveButtons,
 .menu-mats {
@@ -110,7 +99,7 @@ button:disabled {
     display: grid;
     position: absolute;
     top: 10px;
-    left: calc(89% - 320px);
+    left: calc(80% - 200px);
 }
 
 .backpack-tabs {
@@ -168,4 +157,11 @@ button:disabled {
     display: grid;
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(5, 95px);
+}
+
+.menu-shop,
+.menu-mats button,
+.inventory>div>div,
+.save-menu {
+    display: none;
 }
