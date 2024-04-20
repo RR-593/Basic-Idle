@@ -10,6 +10,7 @@ function screenUpdate() {
         $("#money").html(player.money);
     } else $(".money").css("display", "none");
 
+    //mats
     for (let mat in player.mats) player.mats[mat].screenUpdate();
 
     if (autoChopper.amount > 0) {
@@ -21,6 +22,7 @@ function screenUpdate() {
         $("#pickaxe-title").css("display", "block");
         $("#ownedPickaxes").html(pickaxe.amount);
     } else $("#pickaxe-title").css("display", "none");
+
 
     //Shop
     if (log.amount > 0) {

@@ -30,10 +30,11 @@ class Mat {
     }
 
     screenUpdate() {
-        var id = "." + this.name;
+        var eclass = "." + this.name;
         $("#" + this.name).html(this.amount);
-        if (this.amount) $(id).css("display", "block");
-        else $(id).css("display", "none");
+        if (this.unlocked) $("#harvest-" + this.name).css("display", "grid");
+        if (this.amount) $(eclass).css("display", "block")
+        else $(eclass).css("display", "none");
     }
 
 }
