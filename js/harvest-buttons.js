@@ -91,8 +91,8 @@ $(document).ready(() => {
     $(".menu-mats button").click(function() {
         //alert("#" + $("#" + this.id + ">div").attr("id") + " #" + this.id);
         let pb = new Progress(0, 0, 100, { parent: "#" + $("#" + this.id + ">div").attr("id"), button: "#" + this.id });
-        var step = 20;
-        var time = 1500;
+        var step = 10;
+        var time = 1000;
 
         pb.startTo(step, time, () => {
             var matName = this.id.slice(8);
