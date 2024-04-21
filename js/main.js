@@ -4,13 +4,6 @@ var menu;
 $(document).ready(() => {
 
     gameLoop();
-    $(".menu-mats button").click(function() {
-        var matName = this.id.slice(8);
-        if (matName == player.mats[matName].name) {
-            player.mats[matName].harvest();
-            return;
-        }
-    });
 
     $(".tools button").click(function() {
         var toolName = this.id.slice(4);

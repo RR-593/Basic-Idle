@@ -17,6 +17,7 @@
 
     <script type="text/javascript" src="js/classes/mat.js"></script>
     <script type="text/javascript" src="js/classes/player.js"></script>
+    <script type="text/javascript" src="js/harvest-buttons.js"></script>
     <script type="text/javascript" src="js/switchMenu.js"></script>
     <script type="text/javascript" src="js/saveLoad.js"></script>
     <script type="text/javascript" src="js/screenUpdate.js"></script>
@@ -29,9 +30,15 @@
         <div class="menus">
             <div class="main">
                 <div class="menu-mats">
-                    <button id="harvest-log">Chop log</button>
-                    <button id="harvest-stone">Mine stone</button>
-                    <button id="harvest-iron_ore">Mine iron</button>
+                    <button id="harvest-log">
+                        <div id="progress-log"></div>
+                        <span>Chop wood</span></button>
+                    <button id="harvest-stone">
+                        <div id="progress-stone"></div>
+                        <span>Mine stone</span></button>
+                    <button id="harvest-iron_ore">
+                        <div id="progress-iron_ore"></div>
+                        <span>Mine iron</span></button>
                 </div>
                 <button id="visit">Shop</button>
                 <button id="save">Save</button>
