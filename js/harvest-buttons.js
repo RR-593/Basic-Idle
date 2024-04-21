@@ -32,7 +32,7 @@ class Progress {
     syncState() {
         $(this.dom).animate({
             width: this.now + '%'
-        }, 300);
+        }, 300, "easeOutQuad");
     }
 
     startTo(step, time, callBack) {
@@ -43,7 +43,6 @@ class Progress {
         $(this.options.button).removeAttr('hide');
         $(this.options.button).attr('disabled', 'true');
         this.intervalCode = setInterval(() => {
-            console.log(this.intervalCode);
             if (this.now + step >= this.max) {
                 this.now = this.max;
                 this.syncState();
@@ -60,7 +59,6 @@ class Progress {
     }
 
     reset() {
-        console.log("reset");
         $(this.dom).animate({
             opacity: '0'
         }, 150);
