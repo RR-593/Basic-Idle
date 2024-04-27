@@ -119,8 +119,8 @@ button:disabled {
     display: flex;
     position: relative;
     flex-grow: 1;
+    align-items: flex-start;
     justify-content: space-between;
-    width: calc(100%-20px);
     padding: 20px;
     margin: 0.75em 0em;
     font-size: 1.25em;
@@ -202,19 +202,35 @@ button:disabled {
     margin-bottom: 10px;
 }
 
-.forest,
-.menu-shop {
+.menus {
     z-index: 3;
     position: relative;
 }
 
 .textbox {
-    overflow: hidden;
-    background-color: #CE84AD;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 20%;
+    overflow: hidden;
+    background-color: #0a0c1d;
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 25px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 5px 5px 25px 25px;
+    border: 9px outset var(--color-element);
+}
+
+.textbox>div {
+    padding: 10px;
+}
+
+div#text {
+    position: absolute;
+    top: calc(100% - 18px);
+}
+
+div#text p {
+    margin-top: 10px;
 }
 
 .sidebar {
@@ -224,7 +240,7 @@ button:disabled {
 }
 
 .sidebar button {
-    z-index: 10;
+    z-index: 99;
     background: none;
     border: none;
     padding: unset;
@@ -255,6 +271,7 @@ button:disabled {
 }
 
 .popups {
+    z-index: 90;
     display: flex;
     top: 14%;
     position: absolute;

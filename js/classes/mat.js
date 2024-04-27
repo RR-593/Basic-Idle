@@ -18,13 +18,9 @@ class Mat {
 	}
 
 	harvest(multiplyer = 1) {
+		this.amount += this.plus * multiplyer;
+		screenUpdate();
 
-		if (!this.unlocked) {
-			alert("you have nothing to get " + this.name + " with!");
-		} else {
-			this.amount += this.plus * multiplyer;
-			screenUpdate();
-		}
 		return this.amount;
 	}
 

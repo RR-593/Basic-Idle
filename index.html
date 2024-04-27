@@ -37,12 +37,15 @@
 <body>
     <div class="content">
 
+        <div class="title">
+            <h1></h1>
+        </div>
         <div class="level-bar">
             <div id="total-level">
-                <label>Player level <span id="Player-level-num"></span></label>
+                <h2>Player level <span id="Player-level-num">#</span></h2>
             </div>
             <div id="skill-level">
-                <label><span id="skill-bar-name"></span> lvl <span id="skill-level-num"></span></label>
+                <label><span id="skill-bar-name">skill</span> level: <span id="skill-level-num">#</span></label>
             </div>
             <div id="progress-xp">
             </div>
@@ -81,7 +84,6 @@
                             <span>Chop wood</span>
                         </button>
                     </div>
-                    <button id="visit">Shop</button>
                     <button id="explore-forest">Explore</button>
                 </div>
 
@@ -124,57 +126,57 @@
         </div>
 
         <div class="textbox">
-            <p id="text"></p>
-        </div>
-        <div class="popups">
-            <div class="backpack">
-                <div class="backpack-tabs">
-                    <button class="selected" id="mat"><span>Inv</span></button>
-                    <button id="tool"><span>Tools</span></button>
-                </div>
-                <div class="inventory">
-                    <div id="toolpack">
-                        <div class="pick">
+            <div id="text"></div>
+            </di>
+            <div class="popups">
+                <div class="backpack">
+                    <div class="backpack-tabs">
+                        <button class="selected" id="mat"><span>Inv</span></button>
+                        <button id="tool"><span>Tools</span></button>
+                    </div>
+                    <div class="inventory">
+                        <div id="toolpack">
+                            <div class="pick">
 
-                            <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
+                                <p id="pickaxe-title">Pickaxes: <label id="ownedPickaxes"></label></p>
+                            </div>
+                            <div class="autoaxe">
+
+                                <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
+                            </div>
                         </div>
-                        <div class="autoaxe">
-
-                            <p id="autoChopper-title">Mechanical Axes: <label id="ownedAutoChopper"></label></p>
+                        <div id="matpack">
+                            <div class="money">
+                                <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
+                                <p id="money-title">Money: $<label id="money"></label></p>
+                            </div>
+                            <div class="log">
+                                <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
+                                <p id="logs-title">Logs: <label id="log"></label></p>
+                            </div>
+                            <div class="stone">
+                                <object id="crud-icon" data="assets/rock.svg" width="70" height="70"></object>
+                                <p id="stone-title">Stones: <label id="stone"></label></p>
+                            </div>
+                            <div class="iron_ore">
+                                <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
+                                <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
+                            </div>
                         </div>
                     </div>
-                    <div id="matpack">
-                        <div class="money">
-                            <object id="money-icon" data="assets/money.svg" width="70" height="70"></object>
-                            <p id="money-title">Money: $<label id="money"></label></p>
-                        </div>
-                        <div class="log">
-                            <object id="log-icon" data="assets/log.svg" width="70" height="70"></object>
-                            <p id="logs-title">Logs: <label id="log"></label></p>
-                        </div>
-                        <div class="stone">
-                            <object id="crud-icon" data="assets/rock.svg" width="70" height="70"></object>
-                            <p id="stone-title">Stones: <label id="stone"></label></p>
-                        </div>
-                        <div class="iron_ore">
-                            <object id="crud-icon" data="assets/crud.svg" width="70" height="70"></object>
-                            <p id="iron_ore-title">Raw Iron: <label id="iron_ore"></label></p>
+                </div>
+                <div class="settings">
+                    <div class="setting-menu">
+                        <image id="setings-background" src="assets/settings.svg" height="400" width="400" aria-hidden="true"></image>
+                        <div class="save-menu">
+                            <div class="saveButtons">
+                                <button id="saveToLocal">Save</button>
+                                <button id="hardReset" onclick="hardReset();">Reset</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            <div class="settings">
-                <div class="setting-menu">
-                    <image id="setings-background" src="assets/settings.svg" height="400" width="400" aria-hidden="true"></image>
-                    <div class="save-menu">
-                        <div class="saveButtons">
-                            <button id="saveToLocal">Save</button>
-                            <button id="hardReset" onclick="hardReset();">Reset</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 </body>

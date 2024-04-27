@@ -82,6 +82,24 @@ class Player {
 		screenUpdate();
 	}
 
+	randomHarvest() {
+		var mats = this.mats;
+		var random_item = ranNum.num() % 3;
+		var random_amount = (ranNum.num() % 3) + 1;
+		switch (random_item) {
+			case 0:
+				mats[log].harvest(random_amount);
+				break;
+			case 1:
+				mats[stone].harvest(random_amount);
+				break;
+			case 2:
+				mats[log].harvest(random_amount);
+				mats[stone].harvest(random_amount);
+				break;
+		}
+	}
+
 	newSkill(name = "", maxlvl = 10, lvl = 0, exp = 0, nextlvl = 1) {
 		return {
 			name: name,
