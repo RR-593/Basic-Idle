@@ -8,7 +8,7 @@ var ranNum = {
 
 	onLoad: function() {
 		intvial = setInterval(() => {
-			for (var i = 100; i--;) this.lookupTable.push(Math.random() * 101 | 0);
+			for (var i = 1000; i--;) this.lookupTable.push(Math.random() * 101 | 0);
 			clearInterval(intvial);
 		});
 	}

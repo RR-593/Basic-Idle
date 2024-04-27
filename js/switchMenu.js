@@ -12,10 +12,11 @@ function switchInv(menu) {
 
 function switchPopup(popup) {
 	$(".popups>div:not(." + popup + ")").css("display", "none");
+	var blur = $(".main-screen>*:not(.sidebar),.textbox");
 	var hide = $("." + popup).toggle().attr('style');
 	if (hide != 'display: block;') {
-		$(".main-screen>div:not(.sidebar),.textbox").css("filter", "none");
+		blur.css("filter", "none");
 	} else {
-		$(".main-screen>div:not(.sidebar),.textbox").css("filter", "blur(3px)");
+		blur.css("filter", "blur(3px)");
 	}
 }

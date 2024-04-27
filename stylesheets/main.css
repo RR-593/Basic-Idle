@@ -1,4 +1,5 @@
 html {
+    /*  */
     --color-background: #1f1d36;
     --color-text: #FFFFFA;
     --color-dark-text: #A0A0A0;
@@ -24,11 +25,11 @@ body {
     margin: 1%;
     min-height: 700px;
     height: 90vh;
-    min-width: 1000px;
+    min-width: 1150px;
     font-size: 15px;
     justify-content: space-around;
     display: flex;
-    background: var(--color-background);
+    background-color: var(--color-background);
 }
 
 * {
@@ -46,7 +47,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 95%;
+    width: calc(40% + 650px);
 }
 
 button {
@@ -72,13 +73,57 @@ button:disabled {
     cursor: auto;
 }
 
+.background {
+    z-index: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.bg {
+    z-index: -2;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-element);
+    border-radius: 10px;
+}
+
+.ascii {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.ascii>button {
+    background: none;
+    border: none;
+    padding: unset;
+    box-shadow: none;
+    cursor: pointer;
+    font-family: 'Monaco', monospace;
+    font-size: inherit;
+    text-align: left;
+}
+
 .main-screen {
     display: flex;
+    position: relative;
     flex-grow: 1;
     justify-content: space-between;
-    width: 100%;
-    font-size: 1.25em;
+    width: calc(100%-20px);
+    padding: 20px;
     margin: 0.75em 0em;
+    font-size: 1.25em;
 }
 
 .level-bar {
@@ -155,6 +200,12 @@ button:disabled {
     grid-template-columns: repeat(3, 120px);
     column-gap: 10px;
     margin-bottom: 10px;
+}
+
+.forest,
+.menu-shop {
+    z-index: 3;
+    position: relative;
 }
 
 .textbox {
