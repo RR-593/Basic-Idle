@@ -100,6 +100,21 @@ class Player {
 		}
 	}
 
+	sellAll() {
+		for (mat in this.mats) {
+			if (this.mats[mat].amount <= 0) continue;
+			this.money += this.mats[mat].amount * this.mats[mat].sellprice;
+			this.mats[mat].amount = 0;
+		};
+	}
+
+	matsEmpty() {
+		for (mat in this.mats)
+			if (this.mats[mat].amount > 0) return false;
+		return true
+
+	}
+
 	newSkill(name = "", maxlvl = 10, lvl = 0, exp = 0, nextlvl = 1) {
 		return {
 			name: name,

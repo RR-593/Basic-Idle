@@ -48,38 +48,11 @@ $(document).ready(() => {
 	});
 
 
-	$(".sellBut").click(function() {
-		sellAmount = this.id;
-		switch (sellAmount) {
-			case "sellAll":
-				sell(-1);
-				break;
-			case "sell1":
-				sell(1);
-				break;
-			case "sell10":
-				sell(10);
-				break;
-		}
-
+	$(".sellButtton>button").click(function() {
+		player.sellAll();
 		screenUpdate();
 	});
 
-	function sell(amount) {
-
-		if (player.mats.log.amount < amount) {
-			return;
-		}
-
-		if (amount < 0) {
-			player.money += player.mats.log.amount * player.mats.log.sellprice;
-			player.mats.log.amount = 0;
-		} else {
-
-			player.money += amount * player.mats.log.sellprice;
-			player.mats.log.amount -= amount;
-		}
-	}
 
 	$("#whetStone-buy").click(function() {
 		if (player.money < upgrades.wheyStone.price) return;

@@ -205,7 +205,7 @@ button:disabled {
     margin-bottom: 10px;
 }
 
-.sellButtons,
+.sellButton,
 .menu-mats {
     display: grid;
     height: 70px;

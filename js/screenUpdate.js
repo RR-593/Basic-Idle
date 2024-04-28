@@ -2,7 +2,6 @@ function screenUpdate() {
 	//mats n tools
 	var autoChopper = player.tools.autoChopper;
 	var pickaxe = player.tools.pickaxe;
-	var log = player.mats.log;
 
 	//Skill bar
 	//for (let skill in player.skills) player.skills[skill].screenUpdate();
@@ -27,20 +26,10 @@ function screenUpdate() {
 
 
 	//Shop
-	if (log.amount > 0) {
+	if (!player.matsEmpty()) {
 		$("#sellAll").removeAttr("disabled");
 	} else {
 		$("#sellAll").attr('disabled', '');
-	}
-	if (log.amount >= 1) {
-		$("#sell1").removeAttr("disabled");
-	} else {
-		$("#sell1").attr('disabled', '');
-	}
-	if (log.amount >= 10) {
-		$("#sell10").removeAttr("disabled");
-	} else {
-		$("#sell10").attr('disabled', '');
 	}
 
 	$("#autoChopperCost").html(autoChopper.price);
