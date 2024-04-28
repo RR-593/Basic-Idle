@@ -1,16 +1,26 @@
 html {
-    /*  */
+    /* using */
+    /* old
     --color-background: #1f1d36;
+    --color-element: #01151B;
     --color-text: #FFFFFA;
+    --color-text-shadow: #8aa89b;
+    --color-progress-bar: #ffbd42;
+    --color-xp-bar-shadow: #e76f51; */
+    --color-background: #5E548E;
+    --color-element: #231942;
+    --color-textbox-background: #221d33;
+    --color-text: #E0B1CB;
+    --color-text-shadow: #BE95C4;
+    --color-progress-bar: #ffbd42;
+    --color-xp-bar-shadow: #e76f51;
+    /* not using*/
     --color-dark-text: #A0A0A0;
     --color-purple-text: #FA198B;
-    --color-version-control: #261C15;
     --color-newsticker: #010203;
-    --color-element: #01151B;
     --color-tickspeed: #1e90e1;
     --color-heroes: #52b788;
     --color-common: #00A6FB;
-    --color-uncommon: #ffbd42;
     --color-rare: #FB6617;
     --color-legendary: #CE84AD;
     --color-infinity: #466e99;
@@ -142,13 +152,13 @@ button:disabled {
     overflow: hidden;
     transition: all 0.5s;
     will-change: transform;
-    box-shadow: 0 0 5px #e76f51;
+    box-shadow: 0 0 5px var(--color-xp-bar-shadow);
 }
 
 .progress-bar {
     --this-rgb: var(--rgb-harvest-button);
     background: rgb(var(--this-rgb));
-    background-color: var(--color-uncommon);
+    background-color: var(--color-progress-bar);
     /* box-shadow: 0.25em 0.25em 0 rgba(var(--this-rgb), 0.2); */
     height: 100%;
     border-radius: inherit;
@@ -182,7 +192,7 @@ button:disabled {
 
 [id^="harvest-"] span {
     z-index: 1;
-    text-shadow: 1px 1px 3px #8aa89b;
+    text-shadow: 1px 1px 3px var(--color-text-shadow);
 }
 
 .upgrades,
@@ -213,7 +223,7 @@ button:disabled {
     justify-content: flex-end;
     height: 20%;
     overflow: hidden;
-    background-color: #0a0c1d;
+    background-color: var(--color-textbox-background);
     box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 25px 5px rgba(0, 0, 0, 0.4);
     border-radius: 5px 5px 25px 25px;
     border: 9px outset var(--color-element);
@@ -299,7 +309,7 @@ div#text p {
     border-color: rgb(var(--rgb-backpack-button));
     font-weight: bold;
     box-shadow: 4px -4px 0px rgba(var(--this-rgb), 0.5);
-    text-shadow: 1px 1px 3px #8aa89b;
+    text-shadow: 1px 1px 3px var(--color-text-shadow);
 }
 
 .backpack-tabs button span {
