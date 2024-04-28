@@ -106,22 +106,25 @@ button:disabled {
     border-radius: 10px;
 }
 
-.ascii {
+.ascii * {
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-family: 'menlo-regular', monospace;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.ascii>* {
     z-index: 1;
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
 
-.ascii>button {
-    background: none;
-    border: none;
-    padding: unset;
-    box-shadow: none;
-    cursor: pointer;
-    font-family: 'Monaco', monospace;
-    font-size: 0.95em;
-    text-align: left;
+.shop-bg {
+    justify-content: space-around;
 }
 
 .main-screen {
@@ -348,10 +351,11 @@ div#text p {
     grid-template-rows: repeat(5, 95px);
 }
 
-.menu-shop,
+.shop,
 .menu-mats button,
 .inventory>div>div,
 .cave,
-.popups>div {
+.popups>div,
+.ascii>* {
     display: none;
 }

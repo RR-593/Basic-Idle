@@ -40,7 +40,7 @@ function onClickExplore() {
 			break;
 		case scenario <= 12:
 			newMessage("You ran into the traveling merchant");
-			menu = switchMenu("menu-shop");
+			menu = switchMenu("shop");
 			screenUpdate();
 			break;
 		case scenario <= 13:

@@ -1,6 +1,8 @@
 function switchMenu(menu) {
 	$(".menus").children().css("display", "none");
+	$(".ascii").children().css("display", "none");
 	$("." + menu).css("display", "block");
+	$("." + menu + "-bg").css("display", "flex");
 	return menu;
 }
 

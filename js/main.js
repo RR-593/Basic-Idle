@@ -4,6 +4,8 @@ var menu;
 
 $(document).ready(() => {
 	loadTrees();
+	$("#maccaTheShopGuy").html(compileAsciiToString(maccaTheShopGuy));
+	$("#maccaTheShopGuy").css("font-size", "0.6em");
 	ranNum.onLoad();
 	$("#explore-forest").click(onClickExplore);
 	$("button#tree1").click(function() {});
@@ -90,10 +92,6 @@ $(document).ready(() => {
 		var popup = this.id.slice(0, -7);
 		switchPopup(popup);
 	})
-
-	$("#save").click(function() {
-		menu = switchMenu("save-menu");
-	});
 
 	$("[id=return]").click(function() {
 		menu = switchMenu("forest");
