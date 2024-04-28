@@ -22,10 +22,8 @@ html {
 }
 
 body {
-    margin: 1%;
-    min-height: 700px;
-    height: 90vh;
-    min-width: 1150px;
+    min-height: 810px;
+    min-width: 1080px;
     font-size: 15px;
     justify-content: space-around;
     display: flex;
@@ -44,6 +42,7 @@ body {
 }
 
 .content {
+    margin: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -111,7 +110,7 @@ button:disabled {
     box-shadow: none;
     cursor: pointer;
     font-family: 'Monaco', monospace;
-    font-size: inherit;
+    font-size: 0.95em;
     text-align: left;
 }
 
