@@ -21,6 +21,7 @@ function screenUpdate() {
 	} else $("#autoChopper-title").css("display", "none");
 
 	if (pickaxe.lvl > 0) {
+		$(".pick").css("display", "block");
 		$("#ownedPickaxes").html(pickaxe.lvl);
 	} else $(".pick").css("display", "none");
 

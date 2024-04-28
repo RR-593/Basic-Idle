@@ -4,7 +4,7 @@ var menu;
 
 $(document).ready(() => {
 	loadTrees();
-	$("#maccaTheShopGuy").html(compileAsciiToString(maccaTheShopGuy));
+	$("#maccaTheShopGuy").html(compileAsciiToString(maccaTheShopGuy).replace(/•/g, "<span id='maccaEye'>•</span>"));
 	$("#maccaTheShopGuy").css("font-size", "0.6em");
 	ranNum.onLoad();
 	$("#explore-forest").click(onClickExplore);
@@ -48,18 +48,15 @@ $(document).ready(() => {
 	});
 
 
-	$(".sellButtton>button").click(function() {
+	$(".sellButton>button").click(function() {
 		player.sellAll();
+		$("#maccaEye").html("^");
+		setInterval(() => {
+			$("#maccaEye").html("•");
+		}, 1400);
 		screenUpdate();
 	});
 
-
-	$("#whetStone-buy").click(function() {
-		if (player.money < upgrades.wheyStone.price) return;
-		player.money -= upgrades.wheyStone.price;
-		upgrades.wheyStone.amount++;
-		upgrades.wheyStone.price *= upgrades.wheyStone.price;
-	});
 
 	$(".sidebar button").click(function() {
 		var popup = this.id.slice(0, -7);

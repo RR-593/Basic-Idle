@@ -167,6 +167,13 @@ button:disabled {
     border-radius: inherit;
 }
 
+.menus {
+    z-index: 3;
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+}
+
 .menu-mats button:disabled {
     filter: brightness(1);
     cursor: auto;
@@ -198,14 +205,6 @@ button:disabled {
     text-shadow: 1px 1px 3px var(--color-text-shadow);
 }
 
-.upgrades,
-.tools {
-    display: flex;
-    column-gap: 10px;
-    margin-bottom: 10px;
-}
-
-.sellButton,
 .menu-mats {
     display: grid;
     height: 70px;
@@ -214,9 +213,27 @@ button:disabled {
     margin-bottom: 10px;
 }
 
-.menus {
-    z-index: 3;
+.shop {
     position: relative;
+    width: inherit;
+}
+
+.shop>* {
+    position: absolute;
+}
+
+.sellButton {
+    top: 265px;
+    left: 447px;
+}
+
+.tools {
+    left: calc(50% - 227px);
+    row-gap: 13px;
+    top: 286px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .textbox {
@@ -354,6 +371,7 @@ div#text p {
 .shop,
 .menu-mats button,
 .inventory>div>div,
+.inventory>#toolpack,
 .cave,
 .popups>div,
 .ascii>* {
