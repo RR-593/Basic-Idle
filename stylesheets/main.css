@@ -243,7 +243,7 @@ button:disabled {
 
 .sellButton {
     top: 265px;
-    left: 447px;
+    left: calc(50% - 30px);
 }
 
 .tools {
@@ -252,6 +252,11 @@ button:disabled {
     bottom: -350px;
     display: flex;
     flex-direction: column;
+}
+
+.tips {
+    top: 300px;
+    left: calc(50% + 300px);
 }
 
 .textbox {
