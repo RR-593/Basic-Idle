@@ -1,9 +1,12 @@
 let player = new Player();
 let xpBar = new Progress(0, 0, 100, { parent: "#progress-xp", button: "#progress-xp" });
-var CONFIG_HARVEST_LOOP = false;
+
 var menu;
 
 $(document).ready(() => {
+
+	ShopTips.onload();
+
 	loadTrees();
 	$("#maccaTheShopGuy").html(compileAsciiToString(maccaTheShopGuy).replace(/•/g, "<span id='maccaEye'>•</span>"));
 	ranNum.onLoad();

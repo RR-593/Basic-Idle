@@ -1,6 +1,8 @@
 function onClickExplore() {
+
 	var text = "";
 	var scenario = ranNum.num() % 20;
+	scenario = 12;
 	switch (true) {
 		case scenario <= 1:
 			newMessage("found a cave..");

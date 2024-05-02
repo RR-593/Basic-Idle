@@ -21,6 +21,8 @@
     <script type="text/javascript" src="js/classes/player.js"></script>
     <script type="text/javascript" src="js/classes/progress.js"></script>
     <script type="text/javascript" src="js/htmlInteraction.js"></script>
+    <script type="text/javascript" src="js/settings_checkBoxes.js"></script>
+    <script type="text/javascript" src="js/tips.js"></script>
     <script type="text/javascript" src="js/explore.js"></script>
     <script type="text/javascript" src="js/switchMenu.js"></script>
     <script type="text/javascript" src="js/saveLoad.js"></script>
@@ -119,6 +121,10 @@
                         <button id="buy-autoChopper">mechanical Axe ($<span id="autoChopperCost"></span>)</button>
                     </div>
 
+                    <div class="shopMessage">
+
+                    </div>
+
                     <div class="tips">
                         <button id="buy-tip">Got any tips?[$<span id="tip-cost">5</span>]</button>
                     </div>
@@ -178,6 +184,12 @@
                         <div class="saveButtons">
                             <button id="saveToLocal">Save</button>
                             <button id="hardReset" onclick="hardReset();">Reset</button>
+                        </div>
+                        <div class="toggleBoxes">
+                            <label id="autoChop">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
                         </div>
                     </div>
                 </div>

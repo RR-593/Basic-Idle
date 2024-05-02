@@ -67,7 +67,7 @@ var htmlInteraction = {
 	},
 
 	setButtonOnclick: function(id, value) {
-		this.getElement(id).onclick = value;
+		this.getElement(id).addEventListener('click', value);
 	},
 
 	focusElement: function(id) {
