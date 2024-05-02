@@ -52,7 +52,7 @@ body {
 }
 
 .content {
-    margin: 2%;
+    margin: 23px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -112,7 +112,7 @@ button:disabled {
     box-shadow: none;
     cursor: pointer;
     font-family: 'menlo-regular', monospace;
-    font-size: 0.95em;
+    font-size: 0.94em;
     text-align: left;
 }
 
@@ -123,8 +123,25 @@ button:disabled {
     padding: 20px;
 }
 
+.forest-bg {
+    position: relative;
+    bottom: 40px;
+}
+
+#tree1 {
+    position: relative;
+    bottom: 40px;
+}
+
+[id^="tree"]:nth-child(1),
+[id^="tree"]:nth-child(3) {
+    position: relative;
+    top: 40px;
+}
+
 .shop-bg {
     justify-content: space-around;
+    font-size: 0.75em;
 }
 
 .main-screen {
@@ -174,6 +191,15 @@ button:disabled {
     width: 100%;
 }
 
+.menus>div {
+    position: inherit;
+    width: inherit;
+}
+
+.menus>div>div {
+    position: absolute;
+}
+
 .menu-mats button:disabled {
     filter: brightness(1);
     cursor: auto;
@@ -205,21 +231,14 @@ button:disabled {
     text-shadow: 1px 1px 3px var(--color-text-shadow);
 }
 
-.menu-mats {
-    display: grid;
-    height: 70px;
-    grid-template-columns: repeat(3, 120px);
-    column-gap: 10px;
-    margin-bottom: 10px;
-}
-
-.shop {
-    position: relative;
-    width: inherit;
-}
-
-.shop>* {
+#harvest-log {
     position: absolute;
+    top: 210px;
+    left: 100px;
+}
+
+.menu-mats {
+    width: 100%;
 }
 
 .sellButton {
@@ -228,10 +247,9 @@ button:disabled {
 }
 
 .tools {
-    left: calc(50% - 227px);
-    row-gap: 13px;
-    top: 286px;
-    align-items: center;
+    left: calc(50% - 264px);
+    row-gap: 25px;
+    bottom: -350px;
     display: flex;
     flex-direction: column;
 }
@@ -374,6 +392,6 @@ div#text p {
 .inventory>#toolpack,
 .cave,
 .popups>div,
-.ascii>* {
+.ascii>*:not(.forest-bg) {
     display: none;
 }

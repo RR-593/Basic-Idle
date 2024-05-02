@@ -125,7 +125,7 @@ class Player {
 
 			addExp(addexp = 1) {
 				this.exp += addexp;
-				if (this.exp >= this.nextlvl) this.levelUp();
+				if (this.exp >= this.nextlvl && this.maxlvl > this.lvl) this.levelUp();
 				return this.exp;
 			},
 
@@ -143,7 +143,7 @@ class Player {
 				$("#skill-bar-name").html(this.name);
 				$(".level-bar #skill-level-num").html(this.lvl);
 
-				let now = (this.exp <= 0) ? 0 : Math.ceil((this.exp / this.nextlvl) * 100);
+				let now = (this.exp <= 0) ? 0 : (this.exp >= this.nextlvl) ? 100 : Math.ceil((this.exp / this.nextlvl) * 100);
 				if (xpBar.now != now) xpBar.syncState(now);
 
 			}

@@ -1,6 +1,4 @@
 function onClickExplore() {
-	switchMenu("shop");
-	return;
 	var text = "";
 	var scenario = ranNum.num() % 20;
 	switch (true) {

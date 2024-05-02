@@ -1,11 +1,11 @@
 let player = new Player();
 let xpBar = new Progress(0, 0, 100, { parent: "#progress-xp", button: "#progress-xp" });
+var CONFIG_HARVEST_LOOP = false;
 var menu;
 
 $(document).ready(() => {
 	loadTrees();
 	$("#maccaTheShopGuy").html(compileAsciiToString(maccaTheShopGuy).replace(/•/g, "<span id='maccaEye'>•</span>"));
-	$("#maccaTheShopGuy").css("font-size", "0.6em");
 	ranNum.onLoad();
 	$("#explore-forest").click(onClickExplore);
 	$("button#tree1").click(function() {});
@@ -14,28 +14,7 @@ $(document).ready(() => {
 	xpBar.setUp();
 
 
-	$(".menu-mats button").click(function() {
-		//alert("#" + $("#" + this.id + ">div").attr("id") + " #" + this.id);
-		var matName = this.id.slice(8);
-		if (matName != player.mats[matName].name) return;
-		var skill = player.skills[player.mats[matName].skill];
-
-		if (skill.lvl >= skill.maxlvl) {
-			player.mats[matName].harvest();
-			return;
-		}
-		skill.screenUpdate();
-		let pb = new Progress(0, 0, 100, { parent: "#" + $("#" + this.id + ">div").attr("id"), button: "#" + this.id });
-		var step = Math.ceil(100 / (skill.maxlvl + 1 - skill.lvl));
-
-		var time = 1000;
-
-		pb.startTo(step, time, () => {
-			skill.addExp(1);
-			player.mats[matName].harvest();
-			skill.screenUpdate();
-		});
-	});
+	$(".menu-mats button").on('click', function() { harvestBut(this) });
 
 	$(".tools button").click(function() {
 		var toolName = this.id.slice(4);
