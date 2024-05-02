@@ -16,6 +16,6 @@ function harvestBut(e) {
 		player.mats[matName].harvest();
 		skill.screenUpdate();
 		harvestDone = true;
-		if (CONFIG_HARVEST_LOOP) return harvestBut(e);
+		if (settings.CONFIG_HARVEST_LOOP) return harvestBut(e);
 	});
 }

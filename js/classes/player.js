@@ -31,6 +31,10 @@ class Player {
 		this.money = 0;
 		this.focus = 0;
 
+		this.tipsIndex = 0;
+
+		this.settings = settings;
+
 		this.time_since_start = 0;
 		this.won = false;
 	}
@@ -49,6 +53,11 @@ class Player {
 		data.push(this.money);
 		data.push(this.focus);
 
+		data.push(this.tipsIndex);
+
+		data.push(this.settings);
+		console.log(this.settings);
+
 		data.push(this.time_since_start);
 		data.push(this.won);
 
@@ -57,7 +66,6 @@ class Player {
 
 	load(data) {
 		this.reset();
-
 		this.last_ts = data[0];
 
 		for (let mat in data[1]) {
@@ -76,8 +84,16 @@ class Player {
 		this.money = data[5];
 		this.focus = data[6];
 
-		this.time_since_start = data[7];
-		this.won = data[8];
+		this.tipsIndex = data[7];
+
+		console.log(data[8]);
+		for (let setting in data[8]) {
+			this.settings[setting] = data[8][setting];
+		}
+		console.log(this.settings);
+
+		this.time_since_start = data[data.length - 2];
+		this.won = data[data.length - 1];
 
 		screenUpdate();
 	}
