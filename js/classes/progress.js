@@ -15,7 +15,7 @@ function elt(type, prop, ...childrens) {
 
 //Progress class
 class Progress {
-	constructor(now, min, max, options) {
+	constructor(now, min, max, options = { parent: "", button: "", intervalIndex: 0 }) {
 		this.dom = elt("div", {
 			className: "progress-bar"
 		});
@@ -47,39 +47,38 @@ class Progress {
 		this.now += step;
 		this.syncState();
 
-		$(this.options.button).removeAttr('hide');
-		$(this.options.button).attr('disabled', 'true');
 		this.intervalCode = setInterval(() => {
-			if (this.now + step >= this.max) {
-				this.now = this.max;
-				this.syncState();
-				clearInterval(this.intervalCode);
-				this.intervalCode = 0;
+				var isHarvestInterupt = harvest_interval[this.options.intervalIndex];
+				if (this.now + step >= this.max || isHarvestInterupt == 0) {
+					if (isHarvestInterupt != 0) {
+						this.now = this.max;
+						this.syncState();
+						callBack();
+					}
 
-				this.reset();
-				callBack();
-				return;
-			}
-			this.now += step;
-			this.syncState();
-		}, time)
+					clearInterval(this.intervalCode);
+					this.intervalCode = 0;
+
+					this.reset();
+					return;
+				}
+				this.now += step;
+				this.syncState();
+			},
+			time);
 	}
 
 	reset() {
 		$(this.dom).animate({
 			opacity: '0'
-		}, 150);
-		setTimeout(() => {
-			$(this.options.button).attr('hide', 'true');
-			$(this.options.button).removeAttr("disabled");
-			this.now = 0;
+		}, 150, "easeOutQuad");
 
-			$(this.dom).animate({
-				width: '0%',
-				opacity: '1'
-			}, 0);
+		this.now = 0;
 
-		}, 200);
+		$(this.dom).animate({
+			width: '0%',
+			opacity: '1'
+		}, 0);
 	}
 
 	end() {

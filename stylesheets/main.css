@@ -236,10 +236,22 @@ button:disabled {
     text-shadow: 1px 1px 3px var(--color-text-shadow);
 }
 
-#harvest-log {
+#harvest-log-1 {
     position: absolute;
-    top: 210px;
-    left: 100px;
+    top: 162px;
+    left: 44px;
+}
+
+#harvest-log-2 {
+    position: absolute;
+    top: 44px;
+    left: calc(50% + 16px);
+}
+
+#harvest-log-3 {
+    position: absolute;
+    top: 103px;
+    right: 111px;
 }
 
 .menu-mats {

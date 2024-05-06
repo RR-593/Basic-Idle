@@ -27,7 +27,7 @@ class Mat {
 	screenUpdate() {
 		var eclass = "." + this.name;
 		$("#" + this.name).html(this.amount);
-		if (this.unlocked) $("#harvest-" + this.name).css("display", "grid")
+		if (this.unlocked) $("[id^=harvest-" + this.name + "]").css("display", "grid")
 		else $("#harvest-" + this.name).css("display", "none");
 		if (this.amount) $(eclass).css("display", "block")
 		else $(eclass).css("display", "none");

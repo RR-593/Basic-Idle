@@ -6,8 +6,8 @@ var menu;
 $(document).ready(() => {
 
 	ascii.onload();
-
 	ranNum.onLoad();
+
 	$("#explore-forest").click(onClickExplore);
 	$("button#tree1").click(function() {});
 
@@ -17,7 +17,9 @@ $(document).ready(() => {
 	xpBar.setUp();
 
 
-	$(".menu-mats button").on('click', function() { harvestBut(this) });
+	$(".menu-mats button").on('click', function() {
+		harvestBut(this);
+	});
 
 	$(".tools button").click(function() {
 		var toolName = this.id.slice(4);

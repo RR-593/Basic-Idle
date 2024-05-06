@@ -7,5 +7,3 @@
 
 - Fix auto havest
 	- player can double click button and have doouble instacnes of same button
-
-- Save acumilated tips
