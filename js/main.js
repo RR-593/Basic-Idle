@@ -5,14 +5,12 @@ var menu;
 
 $(document).ready(() => {
 
-	ascii.onload();
-	ranNum.onLoad();
+
 
 	$("#explore-forest").click(onClickExplore);
 	$("button#tree1").click(function() {});
 
 	gameLoop();
-	ShopTips.onload(player.tipsIndex);
 
 	xpBar.setUp();
 

@@ -14,15 +14,15 @@ function harvestBut(e) {
 
 	let pb = new Progress(0, 0, 100, { parent: "#" + $("#" + e.id + ">div").attr("id"), button: "#" + e.id, intervalIndex: intervalIndex });
 
-	var step = Math.ceil(100 / (skill.maxlvl + 1 - skill.lvl));
+	var step = 10; //Math.ceil(100 / (skill.maxlvl + 1 - skill.lvl));
 
-	var time = 1000;
+	var time = 2500 - (skill.lvl * 20);
 
 	var harvestDone = true;
 
 	harvest_interval[intervalIndex] = (setInterval(() => {
 		if (harvestDone) {
-			step = Math.ceil(100 / (skill.maxlvl + 1 - skill.lvl));
+			time = 2500 - (skill.lvl * 20);
 			harvestDone = false;
 
 			pb.startTo(step, time, () => {

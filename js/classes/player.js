@@ -20,7 +20,7 @@ class Player {
 		};
 
 		this.skills = {
-			chop: this.newSkill("chop"),
+			chop: this.newSkill("chop", 120),
 			mine: this.newSkill("mine")
 		}
 
@@ -85,7 +85,6 @@ class Player {
 
 		this.tipsIndex = data[7];
 
-		console.log(data[8]);
 		for (let setting in data[8]) {
 			this.settings[setting] = data[8][setting];
 		}
@@ -94,7 +93,10 @@ class Player {
 		this.time_since_start = data[data.length - 2];
 		this.won = data[data.length - 1];
 
-		screenUpdate();
+
+		ranNum.onLoad();
+		ascii.onload();
+		ShopTips.onload(player.tipsIndex);
 	}
 
 	randomHarvest() {

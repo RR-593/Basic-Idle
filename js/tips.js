@@ -35,7 +35,6 @@ var ShopTips = {
 		this.newTip("Did you know you can toggle auto chop trees in the menu!", () => {
 			$("#autoChop").css("display", "grid");
 			$("#autoChop > input").bind('click', () => { settings.autoChopSetting(); });
-			console.log($("#autoChop > input").is(':checked'));
 		});
 		this.newTip("Each level up lets you chop trees faster");
 		this.newTip("You don't have to chop one tree at a time");
