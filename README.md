@@ -5,5 +5,15 @@
 
 # TO DO
 
-- Fix auto havest
-	- player can double click button and have doouble instacnes of same button
+Settings are not being reset saved
+tips price are not being savved / reset
+
+add buttons to pop explore messaages
+
+make more actions
+
+make caves playable
+
+makee map (findable or perchusable?)
+
+Make house area
