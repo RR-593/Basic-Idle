@@ -12,7 +12,7 @@ $(document).ready(() => {
 	$("button#tree1").click(function() {});
 
 	gameLoop();
-	ShopTips.onload();
+	ShopTips.onload(player.tipsIndex);
 
 	xpBar.setUp();
 

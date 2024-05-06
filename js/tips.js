@@ -3,7 +3,8 @@ var ShopTips = {
 	tips: [],
 	maxTips: 0,
 
-	newTip(message = "", callFunc = null) {
+	newTip(message = "", callFunc = () => { return null }) {
+		if (this.tipIndex >= this.tips.length) callFunc();
 		this.tips.push({ message: message, callFunc: callFunc });
 	},
 
@@ -20,20 +21,20 @@ var ShopTips = {
 	buyTip() {
 		if (this.tipIndex++ >= this.tips.length) {
 			this.showTip("Thats all I got :)");
-			return;
+			return this.tipIndex;
 		};
 		this.showTip();
-		if (this.tips[this.tipIndex].callFunc == null) return;
 		this.tips[this.tipIndex].callFunc();
+		return this.tipIndex;
 	},
 
-	onload: function() {
-		this.tipIndex = player.tips;
+	onload: function(selectIndex = 0) {
+		this.tipIndex = selectIndex;
 		this.newTip("Need a tip?");
 
 		this.newTip("Did you know you can toggle auto chop trees in the menu!", () => {
 			$("#autoChop").css("display", "grid");
-			$("#autoChop > input").bind('click', () => { settings.autoChopSetting() });
+			$("#autoChop > input").bind('click', () => { settings.autoChopSetting(); });
 			console.log($("#autoChop > input").is(':checked'));
 		});
 		this.newTip("Each level up lets you chop trees faster");
@@ -41,6 +42,6 @@ var ShopTips = {
 		this.newTip("You can chop 3 trees at a time");
 
 		this.showTip();
-		$("#buy-tip").bind('click', () => { ShopTips.buyTip() });
+		$("#buy-tip").bind('click', () => { player.tipsIndex = ShopTips.buyTip() });
 	}
 };
