@@ -7,7 +7,7 @@ html {
     --color-text-shadow: #8aa89b;
     --color-progress-bar: #ffbd42;
     --color-xp-bar-shadow: #e76f51; */
-    --color-background: #5E548E;
+    --color-background: #16130f;
     --color-element: #231942;
     --color-textbox-background: #221d33;
     --color-text: #E0B1CB;
@@ -144,6 +144,11 @@ button:disabled {
     font-size: 0.75em;
 }
 
+#maccaTheShopGuy {
+    position: relative;
+    right: 100px;
+}
+
 .main-screen {
     display: flex;
     position: relative;
@@ -242,16 +247,22 @@ button:disabled {
 }
 
 .sellButton {
-    top: 265px;
-    left: calc(50% - 30px);
+    top: 276px;
+    left: calc(50% - 122px);
 }
 
 .tools {
-    left: calc(50% - 264px);
+    left: calc(50% - 364px);
     row-gap: 25px;
     bottom: -350px;
     display: flex;
     flex-direction: column;
+}
+
+.shopMessage {
+    position: absolute;
+    left: calc(50% + 310px);
+    top: 170px;
 }
 
 .tips {

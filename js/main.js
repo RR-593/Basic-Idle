@@ -5,15 +5,15 @@ var menu;
 
 $(document).ready(() => {
 
-	ShopTips.onload();
+	ascii.onload();
 
-	loadTrees();
-	$("#maccaTheShopGuy").html(compileAsciiToString(maccaTheShopGuy).replace(/•/g, "<span id='maccaEye'>•</span>"));
 	ranNum.onLoad();
 	$("#explore-forest").click(onClickExplore);
 	$("button#tree1").click(function() {});
 
 	gameLoop();
+	ShopTips.onload();
+
 	xpBar.setUp();
 
 
@@ -32,7 +32,7 @@ $(document).ready(() => {
 
 	$(".sellButton>button").click(function() {
 		player.sellAll();
-		$("#maccaEye").html("^");
+		$("#maccaEye").html("$");
 		setInterval(() => {
 			$("#maccaEye").html("•");
 		}, 1400);

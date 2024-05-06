@@ -56,7 +56,6 @@ class Player {
 		data.push(this.tipsIndex);
 
 		data.push(this.settings);
-		console.log(this.settings);
 
 		data.push(this.time_since_start);
 		data.push(this.won);

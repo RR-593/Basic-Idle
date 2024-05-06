@@ -15,7 +15,6 @@ function screenUpdate() {
 	//mats
 	for (let mat in player.mats) player.mats[mat].screenUpdate();
 
-
 	if (autoChopper.amount > 0) {
 		$("#ownedAutoChopper").html(autoChopper.plus);
 	} else $("#autoChopper-title").css("display", "none");
@@ -54,6 +53,13 @@ function screenUpdate() {
 		else
 			$("#pickaxe-buy").css("display", "none");
 
+	}
+
+	//tips
+	if (!player.matsEmpty()) {
+		$("#sellAll").removeAttr("disabled");
+	} else {
+		$("#sellAll").attr('disabled', '');
 	}
 
 }
