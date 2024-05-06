@@ -56,10 +56,11 @@ function screenUpdate() {
 	}
 
 	//tips
-	if (!player.matsEmpty()) {
-		$("#sellAll").removeAttr("disabled");
+	$("#tip-cost").html(shopTips.price);
+	if (player.money < shopTips.price) {
+		$("#buy-tip").attr("disabled", '');
 	} else {
-		$("#sellAll").attr('disabled', '');
+		$("#buy-tip").removeAttr('disabled');
 	}
 
 }

@@ -8,7 +8,7 @@ class Player {
 		this.last_ts = Date.now();
 
 		this.mats = {
-			log: new Mat("log", "chop", 1, true),
+			log: new Mat("log", "chop", 1, 1),
 			stone: new Mat("stone", "mine"),
 			iron_ore: new Mat("iron_ore", "mine", 2),
 			straw: new Mat("straw", "mine", 2)
@@ -96,7 +96,7 @@ class Player {
 
 		ranNum.onLoad();
 		ascii.onload();
-		ShopTips.onload(player.tipsIndex);
+		shopTips.onload(player.tipsIndex);
 	}
 
 	randomHarvest() {
@@ -184,11 +184,11 @@ class Player {
 
 				if (lvl < this.lvl)
 					for (let i = 0; i < this.matNames.length; i++)
-						if (player.mats[matNames[i]]) player.mats[matNames[i]].unlocked = false;
+						if (player.mats[matNames[i]]) player.mats[matNames[i]].unlocked = 0;
 
 				for (let i = 0; i < this.matNames.length && i < this.lvl; i++)
 					if (player.mats[matNames[i]])
-						player.mats[matNames[i]].unlocked = true;
+						player.mats[matNames[i]].unlocked = 1;
 
 			},
 

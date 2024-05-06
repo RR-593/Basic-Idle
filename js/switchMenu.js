@@ -1,4 +1,5 @@
 function switchMenu(menu) {
+	allStop();
 	$(".menus").children().css("display", "none");
 	$(".ascii").children().css("display", "none");
 	$("." + menu).css("display", "block");

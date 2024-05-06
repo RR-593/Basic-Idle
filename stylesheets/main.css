@@ -1,3 +1,14 @@
+* {
+    color: var(--color-text);
+    margin: 0;
+    /* font-family: var(--font-main);
+    font-variation-settings: var(--settings-sans); */
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
 html {
     /* using */
     /* old
@@ -40,15 +51,16 @@ body {
     background-color: var(--color-background);
 }
 
-* {
-    color: var(--color-text);
-    margin: 0;
-    /* font-family: var(--font-main);
-    font-variation-settings: var(--settings-sans); */
-    user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
+.shop,
+.menu-mats button,
+.inventory>div>div,
+.inventory>#toolpack,
+.cave,
+.popups>div,
+.ascii>*:not(.forest-bg),
+#autoChop,
+[id^=harvest-] {
+    display: none;
 }
 
 .content {
@@ -468,15 +480,4 @@ input:checked+.slider:before {
     display: grid;
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(5, 95px);
-}
-
-.shop,
-.menu-mats button,
-.inventory>div>div,
-.inventory>#toolpack,
-.cave,
-.popups>div,
-.ascii>*:not(.forest-bg),
-#autoChop {
-    display: none;
 }

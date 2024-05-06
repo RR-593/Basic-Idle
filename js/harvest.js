@@ -50,3 +50,13 @@ function stopHarvest(e) {
 	clearInterval(harvest_interval[intervalIndex]);
 	harvest_interval[intervalIndex] = 0;
 }
+
+function allStop() {
+	$(".menu-mats button").off();
+	$(".menu-mats button").on('click', function() { harvestBut(this) });
+
+	for (var i = 0; i < harvest_interval.length; i++) {
+		clearInterval(harvest_interval[i]);
+		harvest_interval[i] = 0;
+	}
+}

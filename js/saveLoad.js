@@ -32,6 +32,6 @@ function hardReset() {
 	$(".level-bar #skill-level-num").html('0');
 	xpBar.syncState(0);
 	$(".popups>div").css("display", "none");
-	$(".main-screen>div:not(.sidebar)").css("filter", "none");
+	$(".main-screen>div:not(.sidebar),.textbox").css("filter", "none");
 	player.reset();
 }
