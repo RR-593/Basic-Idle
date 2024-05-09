@@ -5,7 +5,6 @@
 
 # TO DO
 
-Settings are not being reset saved
 tips price are not being savved / reset
 
 add buttons to pop explore messaages

@@ -33,7 +33,7 @@ class Player {
 
 		this.tipsIndex = 0;
 
-		this.settings = settings;
+		this.settings = settings.reset();
 
 		this.time_since_start = 0;
 		this.won = false;

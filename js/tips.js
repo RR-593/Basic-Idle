@@ -1,5 +1,5 @@
 var shopTips = {
-	price: 5,
+	price: 1,
 	tipsIndex: 0,
 	tips: [],
 	maxTips: 0,
@@ -35,10 +35,12 @@ var shopTips = {
 	onload(selectIndex = 0) {
 		this.tipsIndex = selectIndex;
 		this.newTip("Need a tip?");
-
 		this.newTip("Did you know you can toggle auto chop trees in the menu!", () => {
 			$("#autoChop").css("display", "grid");
-			$("#autoChop > input").bind('click', () => { settings.autoChopSetting(); });
+			$("#autoChop>input").prop('checked', false);
+			$("#autoChop > input").bind('click', () => {
+				settings.autoChopSetting();
+			});
 		});
 		this.newTip("Each level up lets you chop trees faster");
 		this.newTip("You don't have to chop one tree at a time", () => {
@@ -49,6 +51,9 @@ var shopTips = {
 		});
 
 		this.showTip();
+
+		this.price = (Math.ceil(this.price * 1.4) * (1 + selectIndex));
+
 		$("#buy-tip").bind('click', () => {
 			if (player.money < shopTips.price) return;
 			player.money -= shopTips.price;
