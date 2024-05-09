@@ -5,8 +5,6 @@ var menu;
 
 $(document).ready(() => {
 
-
-
 	$("#explore-forest").click(onClickExplore);
 	$("button#tree1").click(function() {});
 
@@ -21,11 +19,9 @@ $(document).ready(() => {
 
 	$(".tools button").click(function() {
 		var toolName = this.id.slice(4);
-		for (let tool in player.tools) {
-			if (toolName == player.tools[tool].name) {
-				player.tools[tool].buy(player);
-				return;
-			}
+		if (toolName == player.tools[toolName].name) {
+			player.tools[toolName].buy(player);
+			return;
 		}
 	});
 

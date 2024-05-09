@@ -292,12 +292,19 @@ button:disabled {
     left: calc(50% - 122px);
 }
 
+.map {
+    position: absolute;
+    top: 131px;
+    left: calc(50% - 138px);
+}
+
 .tools {
     left: calc(50% - 364px);
     row-gap: 25px;
     bottom: -350px;
     display: flex;
     flex-direction: column;
+    width: 174px;
 }
 
 .shopMessage {

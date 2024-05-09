@@ -6,7 +6,9 @@ function harvestBut(e) {
 
 	var matName = e.id.slice("harvest-".length, -2);
 	if (matName != player.mats[matName].name) return;
+
 	var skill = player.skills[player.mats[matName].skill];
+	var tool = player.getTool_by_mat(matName);
 
 	skill.screenUpdate();
 
@@ -14,8 +16,9 @@ function harvestBut(e) {
 
 	let pb = new Progress(0, 0, 100, { parent: "#" + $("#" + e.id + ">div").attr("id"), button: "#" + e.id, intervalIndex: intervalIndex });
 
-	var step = HARVEST_STEP; //Math.ceil(100 / (skill.maxlvl + 1 - skill.lvl));
+	var step = Math.ceil(100 / (((toolLvls.length - tool.lvl) <= 0) ? 1 : toolLvls.length - tool.lvl));
 
+	var i = ((toolLvls.length - tool.lvl) <= 0) ? 1 : toolLvls.length - tool.lvl;
 	var time = 2500 - (skill.lvl * 20);
 
 	var harvestDone = true;

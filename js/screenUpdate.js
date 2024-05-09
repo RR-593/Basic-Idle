@@ -1,6 +1,6 @@
 function screenUpdate() {
 	//mats n tools
-	var autoChopper = player.tools.autoChopper;
+	var axe = player.tools.axe;
 	var pickaxe = player.tools.pickaxe;
 
 	//Skill bar
@@ -15,8 +15,8 @@ function screenUpdate() {
 	//mats
 	for (let mat in player.mats) player.mats[mat].screenUpdate();
 
-	if (autoChopper.amount > 0) {
-		$("#ownedAutoChopper").html(autoChopper.plus);
+	if (axe.amount > 0) {
+		$("#ownedAutoChopper").html(axe.plus);
 	} else $("#autoChopper-title").css("display", "none");
 
 	if (pickaxe.lvl > 0) {
@@ -32,26 +32,33 @@ function screenUpdate() {
 		$("#sellAll").attr('disabled', '');
 	}
 
-	$("#autoChopperCost").html(autoChopper.price);
-	if (player.money >= autoChopper.price) {
-		$("#autoChopper-buy").css("display", "block");
-		$("#autoChopper-buy").removeAttr("disabled");
+
+	var $buyAxe = $("#buy-axe");
+	var isMaxed = ((axe.lvl + 1) >= toolLvls.length);
+
+	$("#axeName").html(!isMaxed ? toolLvls[axe.lvl + 1] : "MAX");
+	$("#axeCost").html(!isMaxed ? axe.price : '');
+
+	if (player.money >= axe.price && !isMaxed) {
+		$buyAxe.css("display", "block");
+		$buyAxe.removeAttr("disabled");
 	} else {
-		if (autoChopper.amount > 0)
-			$("#autoChopper-buy").attr('disabled', '');
-		else
-			$("#autoChopper-buy").css("display", "none");
+		$buyAxe.attr('disabled', '');
+		if (axe.amount > 0)
+			$buyAxe.css("display", "none");
+
 	}
 
+	var $buyPickaxe = $("#buy-pickaxe");
 	$("#pickaxeCost").html(pickaxe.price);
 	if (player.money >= pickaxe.price) {
-		$("#pickaxe-buy").css("display", "block");
-		$("#pickaxe-buy").removeAttr("disabled");
+		$buyPickaxe.css("display", "block");
+		$buyPickaxe.removeAttr("disabled");
 	} else {
 		if (pickaxe.amount > 0)
-			$("#pickaxe-buy").attr('disabled', '');
+			$buyPickaxe.attr('disabled', '');
 		else
-			$("#pickaxe-buy").css("display", "none");
+			$buyPickaxe.css("display", "none");
 
 	}
 

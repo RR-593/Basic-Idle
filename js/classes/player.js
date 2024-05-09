@@ -15,8 +15,8 @@ class Player {
 		};
 
 		this.tools = {
-			pickaxe: this.newTool("pickaxe", 25, ["stone", "iron_ore", "coal"]),
-			autoChopper: this.newTool("autoChopper", 70, ["log"], 1)
+			axe: new Tool("axe", 1, ["log"]),
+			pickaxe: new Tool("pickaxe", 25, ["stone", "iron_ore", "coal"])
 		};
 
 		this.skills = {
@@ -65,6 +65,7 @@ class Player {
 
 	load(data) {
 		this.reset();
+		console.log(data);
 		this.last_ts = data[0];
 
 		for (let mat in data[1]) {
@@ -132,6 +133,13 @@ class Player {
 
 	}
 
+	getTool_by_mat(matName) {
+		for (let tool in this.tools)
+			for (let i = 0; i < this.tools[tool].matNames.length; i++)
+				if (this.tools[tool].matNames[i] == matName) return this.tools[tool];
+		return false;
+	}
+
 	newSkill(name = "", maxlvl = 10, lvl = 0, exp = 0, nextlvl = 1) {
 		return {
 			name: name,
@@ -166,41 +174,6 @@ class Player {
 			}
 
 
-		};
-	}
-
-	newTool(name = "", price = 1, matNames = [], plus = 0, amount = 0, lvl = 0) {
-		return {
-			name: name,
-			price: price,
-			matNames: matNames,
-			plus: plus,
-			amount: amount,
-			lvl: lvl,
-
-			upgrade(lvl = null) {
-				if (lvl) this.lvl = lvl;
-				else this.lvl += 1;
-
-				if (lvl < this.lvl)
-					for (let i = 0; i < this.matNames.length; i++)
-						if (player.mats[matNames[i]]) player.mats[matNames[i]].unlocked = 0;
-
-				for (let i = 0; i < this.matNames.length && i < this.lvl; i++)
-					if (player.mats[matNames[i]])
-						player.mats[matNames[i]].unlocked = 1;
-
-			},
-
-			buy(player) {
-				if (player.money < this.price) return;
-				player.money -= this.price;
-				this.amount++;
-				this.price *= this.amount;
-
-				this.upgrade();
-				screenUpdate();
-			}
 		};
 	}
 }

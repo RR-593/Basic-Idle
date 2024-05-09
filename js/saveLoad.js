@@ -7,7 +7,7 @@ function saveToLocalStorage() {
 }
 
 function loadFromLocalStorage() {
-	//console.log(LOCAL_STORAGE_NAME);
+	console.log(LOCAL_STORAGE_NAME);
 	if (window.localStorage.getItem(LOCAL_STORAGE_NAME) === null) return;
 	let backup = player.save();
 	try {
