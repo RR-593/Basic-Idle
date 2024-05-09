@@ -5,7 +5,9 @@
 
 # TO DO
 
-tips price are not being savved / reset
+Redoo tips
+make tips opject
+maybe put tips into play class
 
 add buttons to pop explore messaages
 
@@ -13,6 +15,6 @@ make more actions
 
 make caves playable
 
-makee map (findable or perchusable?)
+makee map (perchusable)
 
 Make house area

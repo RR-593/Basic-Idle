@@ -16,7 +16,6 @@ var shopTips = {
 		}, 5400);
 		$("#tipMsg").html(message);
 		console.log(message);
-		screenUpdate();
 	},
 
 	buyTip() {
@@ -59,6 +58,7 @@ var shopTips = {
 			player.money -= shopTips.price;
 			shopTips.price = Math.ceil(shopTips.price * 1.4);
 			player.tipsIndex = shopTips.buyTip();
+			screenUpdate();
 		});
 	}
 };

@@ -37,6 +37,10 @@ class Player {
 
 		this.time_since_start = 0;
 		this.won = false;
+
+		ranNum.onLoad();
+		ascii.onload();
+		shopTips.onload(this.tipsIndex);
 	}
 
 	save() {
@@ -93,11 +97,6 @@ class Player {
 
 		this.time_since_start = data[data.length - 2];
 		this.won = data[data.length - 1];
-
-
-		ranNum.onLoad();
-		ascii.onload();
-		shopTips.onload(player.tipsIndex);
 	}
 
 	randomHarvest() {
